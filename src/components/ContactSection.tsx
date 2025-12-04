@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { Phone, MapPin, Send, Clock, MessageCircle } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import plumberWork from "@/assets/plumber-work.png";
 
@@ -26,19 +26,25 @@ const ContactSection = () => {
   const contactInfo = [
     {
       icon: Phone,
-      label: "Telefón",
-      value: "+421 900 123 456",
-      href: "tel:+421900123456",
+      label: "Telefón (WhatsApp)",
+      value: "0944 520 590",
+      href: "tel:+421944520590",
     },
     {
-      icon: Mail,
-      label: "Email",
-      value: "info@dobryvodar.sk",
-      href: "mailto:info@dobryvodar.sk",
+      icon: Clock,
+      label: "Bežné práce",
+      value: "PON-PIA 7:00 - 17:00",
+      href: "#",
+    },
+    {
+      icon: MessageCircle,
+      label: "Havarijné výjazdy",
+      value: "24/7",
+      href: "tel:+421944520590",
     },
     {
       icon: MapPin,
-      label: "Adresa",
+      label: "Oblasť pôsobenia",
       value: "Bratislava a okolie",
       href: "#",
     },
