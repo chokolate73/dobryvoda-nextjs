@@ -4,9 +4,9 @@ import plumberHero from "@/assets/plumber-hero.png";
 
 const HeroSection = () => {
   const benefits = [
-    "Rýchly príjazd do 60 minút",
-    "Bezplatná cenová ponuka",
-    "Záruka na všetky práce",
+    "Havarijné výjazdy: 24/7",
+    "Bežné práce PON-PIA 7:00 - 17:00",
+    "Bratislava a okolie",
   ];
 
   return (
@@ -16,13 +16,13 @@ const HeroSection = () => {
           {/* Content */}
           <div className="animate-fade-in">
             <span className="inline-block px-4 py-1.5 bg-accent text-accent-foreground rounded-full text-sm font-medium mb-6">
-              🔧 Profesionálne vodoinštalačné služby
+              🔧 Spolu s vami 24/7
             </span>
             
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-              Vodoinštalatérski
-              <span className="text-gradient block">Experti Pre</span>
-              Váš Domov
+              Dobrý vodár
+              <span className="text-gradient block">Rýchlo a</span>
+              Spoľahlivo
             </h1>
             
             <p className="text-lg text-muted-foreground mb-8 max-w-xl">
@@ -41,12 +41,14 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <Button variant="hero" size="lg" className="group">
-                Objednať sa
-                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <Button variant="hero" size="lg" className="group" asChild>
+                <a href="tel:+421944520590">
+                  Zavolať teraz
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </a>
               </Button>
-              <Button variant="outline" size="lg">
-                Naše služby
+              <Button variant="outline" size="lg" asChild>
+                <a href="#sluzby">Naše služby</a>
               </Button>
             </div>
           </div>

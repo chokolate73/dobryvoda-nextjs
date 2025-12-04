@@ -9,7 +9,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Domov", href: "#domov" },
     { name: "Služby", href: "#sluzby" },
-    { name: "Prečo my", href: "#preco-my" },
+    { name: "Naše práce", href: "#prace" },
     { name: "Referencie", href: "#referencie" },
     { name: "Kontakt", href: "#kontakt" },
   ];
@@ -20,7 +20,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#domov" className="flex items-center gap-2">
-            <img src={logo} alt="DobryVodar" className="h-14 w-auto" />
+            <img src={logo} alt="Dobrý vodár" className="h-14 w-auto" />
           </a>
 
           {/* Desktop Navigation */}
@@ -38,12 +38,12 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            <a href="tel:+421900123456" className="flex items-center gap-2 text-primary font-semibold">
+            <a href="tel:+421944520590" className="flex items-center gap-2 text-primary font-semibold">
               <Phone className="h-4 w-4" />
-              +421 900 123 456
+              0944 520 590
             </a>
-            <Button variant="hero" size="default">
-              Objednať sa
+            <Button variant="hero" size="default" asChild>
+              <a href="#kontakt">Objednať sa</a>
             </Button>
           </div>
 
@@ -71,12 +71,12 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <a href="tel:+421900123456" className="flex items-center gap-2 text-primary font-semibold py-2">
+              <a href="tel:+421944520590" className="flex items-center gap-2 text-primary font-semibold py-2">
                 <Phone className="h-4 w-4" />
-                +421 900 123 456
+                0944 520 590
               </a>
-              <Button variant="hero" className="mt-2">
-                Objednať sa
+              <Button variant="hero" className="mt-2" asChild>
+                <a href="#kontakt">Objednať sa</a>
               </Button>
             </div>
           </div>
