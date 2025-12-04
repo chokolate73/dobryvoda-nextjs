@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
-import plumberHero from "@/assets/plumber-hero.png";
+import plumberHero from "@/assets/plumber-hero.jpg";
 
 const HeroSection = () => {
   const benefits = [
