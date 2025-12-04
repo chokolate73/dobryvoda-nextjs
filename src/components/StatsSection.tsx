@@ -1,8 +1,8 @@
 const StatsSection = () => {
   const stats = [
-    { value: "500+", label: "Spokojných klientov" },
-    { value: "15", label: "Rokov skúseností" },
-    { value: "1000+", label: "Dokončených projektov" },
+    { value: "200+", label: "Spokojných klientov" },
+    { value: "10", label: "Rokov skúseností" },
+    { value: "300+", label: "Dokončených projektov" },
     { value: "24/7", label: "Pohotovostná služba" },
   ];
 
@@ -19,9 +19,7 @@ const StatsSection = () => {
               <div className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary mb-2">
                 {stat.value}
               </div>
-              <div className="text-sm md:text-base text-muted-foreground font-medium">
-                {stat.label}
-              </div>
+              <div className="text-sm md:text-base text-muted-foreground font-medium">{stat.label}</div>
             </div>
           ))}
         </div>
