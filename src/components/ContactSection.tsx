@@ -4,7 +4,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, MapPin, Send, Clock, MessageCircle } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
-import plumberWork from "@/assets/plumber-work.png";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -67,13 +66,13 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
           {/* Form */}
-          <div className="bg-card rounded-2xl p-8 card-shadow animate-fade-in">
+          <div className="bg-card rounded-2xl p-8 card-shadow animate-fade-in h-full">
             <h3 className="font-display text-2xl font-bold text-foreground mb-6">
               Napíšte nám
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5 h-full flex flex-col">
               <div>
                 <Input
                   placeholder="Vaše meno"
@@ -106,7 +105,7 @@ const ContactSection = () => {
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
                 rows={5}
-                className="resize-none"
+                className="resize-none flex-grow"
               />
               <Button type="submit" variant="hero" size="lg" className="w-full group">
                 Odoslať správu
@@ -115,35 +114,23 @@ const ContactSection = () => {
             </form>
           </div>
 
-          {/* Contact Info & Image */}
-          <div className="space-y-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            {/* Contact Cards */}
-            <div className="space-y-4">
-              {contactInfo.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="flex items-center gap-4 p-4 bg-card rounded-xl border border-border hover:border-primary/30 hover:card-shadow transition-all duration-300"
-                >
-                  <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
-                    <item.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-muted-foreground">{item.label}</div>
-                    <div className="font-semibold text-foreground">{item.value}</div>
-                  </div>
-                </a>
-              ))}
-            </div>
-
-            {/* Image */}
-            <div className="rounded-2xl overflow-hidden card-shadow">
-              <img
-                src={plumberWork}
-                alt="Vodoinštalatér pri práci"
-                className="w-full h-auto object-cover"
-              />
-            </div>
+          {/* Contact Info */}
+          <div className="flex flex-col justify-center gap-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            {contactInfo.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="flex items-center gap-4 p-5 bg-card rounded-xl border border-border hover:border-primary/30 hover:card-shadow transition-all duration-300"
+              >
+                <div className="w-14 h-14 bg-accent rounded-xl flex items-center justify-center flex-shrink-0">
+                  <item.icon className="h-7 w-7 text-primary" />
+                </div>
+                <div>
+                  <div className="text-sm text-muted-foreground">{item.label}</div>
+                  <div className="font-bold text-lg text-foreground">{item.value}</div>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </div>
