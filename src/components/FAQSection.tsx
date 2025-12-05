@@ -4,8 +4,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 const FAQSection = () => {
+  const headerRef = useScrollAnimation({ threshold: 0.2 });
+  const accordionRef = useScrollAnimation({ threshold: 0.1 });
+
   const faqs = [
     {
       question: "Ako rýchlo môžete prísť?",
@@ -34,7 +38,10 @@ const FAQSection = () => {
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
           {/* Header */}
-          <div className="lg:col-span-2 animate-fade-in">
+          <div
+            ref={headerRef.ref}
+            className={`lg:col-span-2 scroll-animate-left ${headerRef.isVisible ? "visible" : ""}`}
+          >
             <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-3 block">
               Časté otázky
             </span>
@@ -54,7 +61,10 @@ const FAQSection = () => {
           </div>
 
           {/* FAQ Accordion */}
-          <div className="lg:col-span-3 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <div
+            ref={accordionRef.ref}
+            className={`lg:col-span-3 scroll-animate-right ${accordionRef.isVisible ? "visible" : ""}`}
+          >
             <Accordion type="single" collapsible className="space-y-4">
               {faqs.map((faq, index) => (
                 <AccordionItem

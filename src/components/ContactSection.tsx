@@ -4,8 +4,13 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, MapPin, Send, Clock, MessageCircle } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 const ContactSection = () => {
+  const headerRef = useScrollAnimation({ threshold: 0.2 });
+  const formRef = useScrollAnimation({ threshold: 0.1 });
+  const infoRef = useScrollAnimation({ threshold: 0.1 });
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -53,7 +58,10 @@ const ContactSection = () => {
     <section id="kontakt" className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div
+          ref={headerRef.ref}
+          className={`text-center max-w-2xl mx-auto mb-16 scroll-animate ${headerRef.isVisible ? "visible" : ""}`}
+        >
           <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-3 block">
             Kontaktujte nás
           </span>
@@ -68,7 +76,10 @@ const ContactSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
           {/* Form */}
-          <div className="bg-card rounded-2xl p-8 card-shadow animate-fade-in h-full flex flex-col">
+          <div
+            ref={formRef.ref}
+            className={`bg-card rounded-2xl p-8 card-shadow h-full flex flex-col scroll-animate-left ${formRef.isVisible ? "visible" : ""}`}
+          >
             <h3 className="font-display text-2xl font-bold text-foreground mb-6">
               Napíšte nám
             </h3>
@@ -115,12 +126,16 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="flex flex-col justify-center gap-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            {contactInfo.map((item) => (
+          <div
+            ref={infoRef.ref}
+            className={`flex flex-col justify-center gap-4 scroll-animate-right ${infoRef.isVisible ? "visible" : ""}`}
+          >
+            {contactInfo.map((item, index) => (
               <a
                 key={item.label}
                 href={item.href}
                 className="flex items-center gap-4 p-5 bg-card rounded-xl border border-border hover:border-primary/30 hover:card-shadow transition-all duration-300"
+                style={{ transitionDelay: `${index * 0.1}s` }}
               >
                 <div className="w-14 h-14 bg-accent rounded-xl flex items-center justify-center flex-shrink-0">
                   <item.icon className="h-7 w-7 text-primary" />
