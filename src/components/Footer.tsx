@@ -1,5 +1,5 @@
 import { Phone, MapPin, Clock } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-new.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <img src={logo} alt="Dobrý vodár" className="h-16 w-auto mb-4 brightness-0 invert" />
+            <img src={logo} alt="Dobrý vodár" className="h-20 w-auto mb-4" />
             <p className="text-primary-foreground/70 leading-relaxed">
               Dobrý vodár - spolu s vami 24/7. Profesionálne vodoinštalačné služby pre váš domov. Rýchlo a spoľahlivo.
             </p>
