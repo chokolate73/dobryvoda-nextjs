@@ -68,11 +68,11 @@ const ContactSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
           {/* Form */}
-          <div className="bg-card rounded-2xl p-8 card-shadow animate-fade-in h-full">
+          <div className="bg-card rounded-2xl p-8 card-shadow animate-fade-in h-full flex flex-col">
             <h3 className="font-display text-2xl font-bold text-foreground mb-6">
               Napíšte nám
             </h3>
-            <form onSubmit={handleSubmit} className="space-y-5 h-full flex flex-col">
+            <form onSubmit={handleSubmit} className="space-y-5 flex-1 flex flex-col">
               <div>
                 <Input
                   placeholder="Vaše meno"
@@ -104,10 +104,10 @@ const ContactSection = () => {
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
-                rows={5}
-                className="resize-none flex-grow"
+                rows={4}
+                className="resize-none flex-1 min-h-[100px]"
               />
-              <Button type="submit" variant="hero" size="lg" className="w-full group">
+              <Button type="submit" variant="hero" size="lg" className="w-full group mt-auto">
                 Odoslať správu
                 <Send className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
