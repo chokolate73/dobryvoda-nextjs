@@ -1,6 +1,10 @@
 import { Star } from "lucide-react";
+import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 const TestimonialsSection = () => {
+  const headerRef = useScrollAnimation({ threshold: 0.2 });
+  const cardsRef = useScrollAnimation({ threshold: 0.1 });
+
   const testimonials = [
     {
       name: "Martin Kováč",
@@ -26,7 +30,10 @@ const TestimonialsSection = () => {
     <section id="referencie" className="py-20 lg:py-28 bg-secondary/50">
       <div className="container mx-auto">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div
+          ref={headerRef.ref}
+          className={`text-center max-w-2xl mx-auto mb-16 scroll-animate ${headerRef.isVisible ? "visible" : ""}`}
+        >
           <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-3 block">
             Referencie
           </span>
@@ -40,12 +47,15 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div
+          ref={cardsRef.ref}
+          className={`grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 scroll-animate ${cardsRef.isVisible ? "visible" : ""}`}
+        >
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.name}
-              className="p-6 lg:p-8 bg-card rounded-2xl card-shadow hover:card-shadow-hover transition-all duration-300 animate-slide-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="p-6 lg:p-8 bg-card rounded-2xl card-shadow hover:card-shadow-hover transition-all duration-300"
+              style={{ transitionDelay: `${index * 0.15}s` }}
             >
               {/* Rating */}
               <div className="flex gap-1 mb-4">

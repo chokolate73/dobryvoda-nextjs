@@ -1,6 +1,11 @@
-import { AlertTriangle, Wrench, Droplets, Thermometer, ShieldCheck, Clock, Plug, Bath } from "lucide-react";
+import { AlertTriangle, Wrench, ShieldCheck, Clock } from "lucide-react";
+import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 const ServicesSection = () => {
+  const headerRef = useScrollAnimation({ threshold: 0.2 });
+  const cardsRef = useScrollAnimation({ threshold: 0.1 });
+  const noteRef = useScrollAnimation({ threshold: 0.2 });
+
   const emergencyServices = [
     "Únik vody / prasknuté potrubie",
     "Zatekanie, havarijné opravy",
@@ -25,7 +30,10 @@ const ServicesSection = () => {
     <section id="sluzby" className="pt-20 lg:pt-28 pb-12 lg:pb-16 bg-background">
       <div className="container mx-auto">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div
+          ref={headerRef.ref}
+          className={`text-center max-w-2xl mx-auto mb-16 scroll-animate ${headerRef.isVisible ? "visible" : ""}`}
+        >
           <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-3 block">
             Naše služby
           </span>
@@ -39,9 +47,15 @@ const ServicesSection = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <div
+          ref={cardsRef.ref}
+          className={`grid md:grid-cols-2 gap-8 lg:gap-12 scroll-animate ${cardsRef.isVisible ? "visible" : ""}`}
+        >
           {/* Emergency Services */}
-          <div className="bg-card rounded-2xl border border-border p-8 card-shadow animate-fade-in">
+          <div 
+            className="bg-card rounded-2xl border border-border p-8 card-shadow"
+            style={{ transitionDelay: "0.1s" }}
+          >
             <div className="flex items-center gap-4 mb-6">
               <div className="w-14 h-14 bg-destructive/10 rounded-xl flex items-center justify-center">
                 <AlertTriangle className="h-7 w-7 text-destructive" />
@@ -64,7 +78,10 @@ const ServicesSection = () => {
           </div>
 
           {/* Regular Services */}
-          <div className="bg-card rounded-2xl border border-border p-8 card-shadow animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <div 
+            className="bg-card rounded-2xl border border-border p-8 card-shadow"
+            style={{ transitionDelay: "0.2s" }}
+          >
             <div className="flex items-center gap-4 mb-6">
               <div className="w-14 h-14 bg-accent rounded-xl flex items-center justify-center">
                 <Wrench className="h-7 w-7 text-primary" />
@@ -88,7 +105,10 @@ const ServicesSection = () => {
         </div>
 
         {/* Pricing Note */}
-        <div className="mt-12 bg-accent/50 rounded-2xl p-6 lg:p-8 text-center animate-fade-in" style={{ animationDelay: "0.2s" }}>
+        <div
+          ref={noteRef.ref}
+          className={`mt-12 bg-accent/50 rounded-2xl p-6 lg:p-8 text-center scroll-animate ${noteRef.isVisible ? "visible" : ""}`}
+        >
           <h4 className="font-display text-xl font-bold text-foreground mb-2">
             Ceny sú individuálne
           </h4>
