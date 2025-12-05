@@ -32,9 +32,9 @@ const FAQSection = () => {
   return (
     <section id="faq" className="py-20 lg:py-28 bg-secondary/50">
       <div className="container mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
           {/* Header */}
-          <div className="animate-fade-in">
+          <div className="lg:col-span-3 animate-fade-in">
             <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-3 block">
               Časté otázky
             </span>
@@ -54,7 +54,7 @@ const FAQSection = () => {
           </div>
 
           {/* FAQ Accordion */}
-          <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <div className="lg:col-span-2 animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <Accordion type="single" collapsible className="space-y-4">
               {faqs.map((faq, index) => (
                 <AccordionItem
