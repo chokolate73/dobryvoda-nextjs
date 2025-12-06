@@ -118,6 +118,8 @@ const ContactSection = () => {
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
                   className="h-12"
+                  onInvalid={(e) => (e.target as HTMLInputElement).setCustomValidity(t("contact.validation.name"))}
+                  onInput={(e) => (e.target as HTMLInputElement).setCustomValidity("")}
                 />
               </div>
               <div className="grid md:grid-cols-2 gap-4">
@@ -128,6 +130,8 @@ const ContactSection = () => {
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
                   className="h-12"
+                  onInvalid={(e) => (e.target as HTMLInputElement).setCustomValidity(t("contact.validation.email"))}
+                  onInput={(e) => (e.target as HTMLInputElement).setCustomValidity("")}
                 />
                 <Input
                   type="tel"
@@ -144,6 +148,8 @@ const ContactSection = () => {
                 required
                 rows={4}
                 className="resize-none flex-1 min-h-[100px]"
+                onInvalid={(e) => (e.target as HTMLTextAreaElement).setCustomValidity(t("contact.validation.message"))}
+                onInput={(e) => (e.target as HTMLTextAreaElement).setCustomValidity("")}
               />
               <Button type="submit" variant="hero" size="lg" className="w-full group mt-auto" disabled={isSubmitting}>
                 {isSubmitting ? (
