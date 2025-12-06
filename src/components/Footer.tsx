@@ -70,11 +70,11 @@ const Footer = () => {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="tel:+421944520590"
+                  href="tel:+421944562059"
                   className="flex items-center gap-3 text-primary-foreground/70 hover:text-primary-foreground transition-colors"
                 >
                   <Phone className="h-5 w-5 flex-shrink-0" />
-                  0944 520 590 (WhatsApp)
+                  0944 562 059 (WhatsApp)
                 </a>
               </li>
               <li>

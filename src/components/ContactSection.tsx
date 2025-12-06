@@ -33,8 +33,8 @@ const ContactSection = () => {
     {
       icon: Phone,
       label: t("contact.info.phone"),
-      value: "0944 520 590",
-      href: "tel:+421944520590",
+      value: "0944 562 059",
+      href: "tel:+421944562059",
     },
     {
       icon: Clock,
@@ -46,7 +46,7 @@ const ContactSection = () => {
       icon: MessageCircle,
       label: t("contact.info.emergency"),
       value: "24/7",
-      href: "tel:+421944520590",
+      href: "tel:+421944562059",
     },
     {
       icon: MapPin,

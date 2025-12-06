@@ -42,9 +42,9 @@ const Navbar = () => {
           {/* CTA Button & Language Toggle */}
           <div className="hidden md:flex items-center gap-4">
             <LanguageToggle />
-            <a href="tel:+421944520590" className="flex items-center gap-2 text-primary font-semibold">
+            <a href="tel:+421944562059" className="flex items-center gap-2 text-primary font-semibold">
               <Phone className="h-4 w-4" />
-              0944 520 590
+              0944 562 059
             </a>
             <Button variant="hero" size="default" asChild>
               <a href="#kontakt">{t("nav.book")}</a>
@@ -78,9 +78,9 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <a href="tel:+421944520590" className="flex items-center gap-2 text-primary font-semibold py-2">
+              <a href="tel:+421944562059" className="flex items-center gap-2 text-primary font-semibold py-2">
                 <Phone className="h-4 w-4" />
-                0944 520 590
+                0944 562 059
               </a>
               <Button variant="hero" className="mt-2" asChild>
                 <a href="#kontakt">{t("nav.book")}</a>
