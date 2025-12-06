@@ -21,7 +21,7 @@ const LanguageToggle = () => {
     <DropdownMenu>
       <DropdownMenuTrigger className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-accent hover:bg-accent/80 transition-colors text-sm font-medium outline-none">
         <Globe className="h-4 w-4" />
-        <span>{currentLanguage?.flag} {currentLanguage?.code.toUpperCase()}</span>
+        <span>{currentLanguage?.label}</span>
         <ChevronDown className="h-3 w-3" />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="bg-background border border-border z-50">
