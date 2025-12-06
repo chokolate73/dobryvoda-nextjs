@@ -1,12 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import plumberHero from "@/assets/plumber-hero.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const HeroSection = () => {
+  const { t } = useLanguage();
+
   const benefits = [
-    "Havarijné výjazdy: 24/7",
-    "Bežné práce PON-PIA 7:00 - 17:00",
-    "Bratislava a okolie",
+    t("hero.benefit1"),
+    t("hero.benefit2"),
+    t("hero.benefit3"),
   ];
 
   return (
@@ -16,17 +19,17 @@ const HeroSection = () => {
           {/* Content */}
           <div className="animate-fade-in">
             <span className="inline-block px-4 py-1.5 bg-accent text-accent-foreground rounded-full text-sm font-medium mb-6">
-              🔧 Spolu s vami 24/7
+              {t("hero.badge")}
             </span>
             
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-              Dobrý vodár
-              <span className="text-gradient block">Rýchlo a</span>
-              Spoľahlivo
+              {t("hero.title1")}
+              <span className="text-gradient block">{t("hero.title2")}</span>
+              {t("hero.title3")}
             </h1>
             
             <p className="text-lg text-muted-foreground mb-8 max-w-xl">
-              Profesionálna inštalácia a oprava vodovodných systémov. Riešime všetky problémy s vodoinštaláciou rýchlo a spoľahlivo.
+              {t("hero.description")}
             </p>
 
             {/* Benefits */}
@@ -43,12 +46,12 @@ const HeroSection = () => {
             <div className="flex flex-wrap gap-4">
               <Button variant="hero" size="lg" className="group" asChild>
                 <a href="tel:+421944520590">
-                  Zavolať teraz
+                  {t("hero.cta.call")}
                   <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="#sluzby">Naše služby</a>
+                <a href="#sluzby">{t("hero.cta.services")}</a>
               </Button>
             </div>
           </div>
@@ -59,7 +62,7 @@ const HeroSection = () => {
               <div className="bg-card rounded-3xl overflow-hidden card-shadow">
                 <img
                   src={plumberHero}
-                  alt="Profesionálny vodoinštalatér"
+                  alt={t("hero.image.alt")}
                   className="w-full h-auto object-cover"
                 />
               </div>

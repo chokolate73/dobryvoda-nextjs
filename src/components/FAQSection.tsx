@@ -5,31 +5,33 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const FAQSection = () => {
   const headerRef = useScrollAnimation({ threshold: 0.2 });
   const accordionRef = useScrollAnimation({ threshold: 0.1 });
+  const { t } = useLanguage();
 
   const faqs = [
     {
-      question: "Ako rýchlo môžete prísť?",
-      answer: "V prípade bežných objednávok príjdeme do 24-48 hodín. Pri naliehavých situáciách poskytujeme pohotovostnú službu s príjazdom do 60 minút.",
+      question: t("faq.1.question"),
+      answer: t("faq.1.answer"),
     },
     {
-      question: "Aké služby ponúkate?",
-      answer: "Ponúkame komplexné vodoinštalačné služby vrátane opráv vodovodných potrubí, inštalácie sanitárnych zariadení, čistenia odpadov, opráv vykurovania a montáže kotlov.",
+      question: t("faq.2.question"),
+      answer: t("faq.2.answer"),
     },
     {
-      question: "Poskytujete záruky na vaše práce?",
-      answer: "Áno, na všetky naše práce poskytujeme záruku minimálne 24 mesiacov. Na niektoré typy prác ponúkame aj rozšírenú záruku.",
+      question: t("faq.3.question"),
+      answer: t("faq.3.answer"),
     },
     {
-      question: "Koľko stojí vaša služba?",
-      answer: "Ceny závisia od typu práce. Vždy poskytujeme bezplatnú cenovú ponuku pred začatím prác, aby ste presne vedeli, čo očakávať. Bez skrytých poplatkov.",
+      question: t("faq.4.question"),
+      answer: t("faq.4.answer"),
     },
     {
-      question: "Pracujete aj cez víkendy?",
-      answer: "Áno, poskytujeme služby 7 dní v týždni. Pre pohotovostné služby sme dostupní 24/7 vrátane sviatkov.",
+      question: t("faq.5.question"),
+      answer: t("faq.5.answer"),
     },
   ];
 
@@ -43,17 +45,17 @@ const FAQSection = () => {
             className={`lg:col-span-2 scroll-animate-left ${headerRef.isVisible ? "visible" : ""}`}
           >
             <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-3 block">
-              Časté otázky
+              {t("faq.label")}
             </span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Rýchle odpovede na
-              <span className="text-gradient"> vaše otázky</span>
+              {t("faq.title1")}
+              <span className="text-gradient">{t("faq.title2")}</span>
             </h2>
             <p className="text-muted-foreground text-lg mb-6">
-              Nájdite odpovede na najčastejšie otázky o našich vodoinštalačných službách.
+              {t("faq.description")}
             </p>
             <p className="text-muted-foreground">
-              Nenašli ste odpoveď? Kontaktujte nás na{" "}
+              {t("faq.cta")}{" "}
               <a href="mailto:info@dobryvodar.sk" className="text-primary font-semibold hover:underline">
                 info@dobryvodar.sk
               </a>

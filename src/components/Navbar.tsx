@@ -2,16 +2,19 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
+import LanguageToggle from "@/components/LanguageToggle";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useLanguage();
 
   const navLinks = [
-    { name: "Domov", href: "#domov" },
-    { name: "Služby", href: "#sluzby" },
-    { name: "Naše práce", href: "#prace" },
-    { name: "Referencie", href: "#referencie" },
-    { name: "Kontakt", href: "#kontakt" },
+    { name: t("nav.home"), href: "#domov" },
+    { name: t("nav.services"), href: "#sluzby" },
+    { name: t("nav.work"), href: "#prace" },
+    { name: t("nav.references"), href: "#referencie" },
+    { name: t("nav.contact"), href: "#kontakt" },
   ];
 
   return (
@@ -27,7 +30,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
-                key={link.name}
+                key={link.href}
                 href={link.href}
                 className="text-foreground/80 hover:text-primary font-medium transition-colors duration-200"
               >
@@ -36,25 +39,29 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Button & Language Toggle */}
           <div className="hidden md:flex items-center gap-4">
+            <LanguageToggle />
             <a href="tel:+421944520590" className="flex items-center gap-2 text-primary font-semibold">
               <Phone className="h-4 w-4" />
               0944 520 590
             </a>
             <Button variant="hero" size="default" asChild>
-              <a href="#kontakt">Objednať sa</a>
+              <a href="#kontakt">{t("nav.book")}</a>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-foreground"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          <div className="md:hidden flex items-center gap-3">
+            <LanguageToggle />
+            <button
+              className="p-2 text-foreground"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -63,7 +70,7 @@ const Navbar = () => {
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <a
-                  key={link.name}
+                  key={link.href}
                   href={link.href}
                   className="text-foreground/80 hover:text-primary font-medium py-2 transition-colors"
                   onClick={() => setIsOpen(false)}
@@ -76,7 +83,7 @@ const Navbar = () => {
                 0944 520 590
               </a>
               <Button variant="hero" className="mt-2" asChild>
-                <a href="#kontakt">Objednať sa</a>
+                <a href="#kontakt">{t("nav.book")}</a>
               </Button>
             </div>
           </div>

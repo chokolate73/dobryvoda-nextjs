@@ -5,11 +5,13 @@ import { Textarea } from "@/components/ui/textarea";
 import { Phone, MapPin, Send, Clock, MessageCircle } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ContactSection = () => {
   const headerRef = useScrollAnimation({ threshold: 0.2 });
   const formRef = useScrollAnimation({ threshold: 0.1 });
   const infoRef = useScrollAnimation({ threshold: 0.1 });
+  const { t } = useLanguage();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -21,8 +23,8 @@ const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Správa odoslaná!",
-      description: "Ďakujeme za vašu správu. Čoskoro vás budeme kontaktovať.",
+      title: t("contact.toast.title"),
+      description: t("contact.toast.description"),
     });
     setFormData({ name: "", email: "", phone: "", message: "" });
   };
@@ -30,26 +32,26 @@ const ContactSection = () => {
   const contactInfo = [
     {
       icon: Phone,
-      label: "Telefón (WhatsApp)",
+      label: t("contact.info.phone"),
       value: "0944 520 590",
       href: "tel:+421944520590",
     },
     {
       icon: Clock,
-      label: "Bežné práce",
+      label: t("contact.info.regular"),
       value: "PON-PIA 7:00 - 17:00",
       href: "#",
     },
     {
       icon: MessageCircle,
-      label: "Havarijné výjazdy",
+      label: t("contact.info.emergency"),
       value: "24/7",
       href: "tel:+421944520590",
     },
     {
       icon: MapPin,
-      label: "Oblasť pôsobenia",
-      value: "Bratislava a okolie",
+      label: t("contact.info.area"),
+      value: t("contact.info.area.value"),
       href: "#",
     },
   ];
@@ -63,14 +65,14 @@ const ContactSection = () => {
           className={`text-center max-w-2xl mx-auto mb-16 scroll-animate ${headerRef.isVisible ? "visible" : ""}`}
         >
           <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-3 block">
-            Kontaktujte nás
+            {t("contact.label")}
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Objednajte si
-            <span className="text-gradient"> termín ešte dnes</span>
+            {t("contact.title1")}
+            <span className="text-gradient">{t("contact.title2")}</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Máte problém s vodoinštaláciou? Kontaktujte nás a my vám pomôžeme.
+            {t("contact.description")}
           </p>
         </div>
 
@@ -81,12 +83,12 @@ const ContactSection = () => {
             className={`bg-card rounded-2xl p-8 card-shadow h-full flex flex-col scroll-animate-left ${formRef.isVisible ? "visible" : ""}`}
           >
             <h3 className="font-display text-2xl font-bold text-foreground mb-6">
-              Napíšte nám
+              {t("contact.form.title")}
             </h3>
             <form onSubmit={handleSubmit} className="space-y-5 flex-1 flex flex-col">
               <div>
                 <Input
-                  placeholder="Vaše meno"
+                  placeholder={t("contact.form.name")}
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
@@ -96,7 +98,7 @@ const ContactSection = () => {
               <div className="grid md:grid-cols-2 gap-4">
                 <Input
                   type="email"
-                  placeholder="Váš email"
+                  placeholder={t("contact.form.email")}
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
@@ -104,14 +106,14 @@ const ContactSection = () => {
                 />
                 <Input
                   type="tel"
-                  placeholder="Telefónne číslo"
+                  placeholder={t("contact.form.phone")}
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   className="h-12"
                 />
               </div>
               <Textarea
-                placeholder="Opíšte váš problém alebo požiadavku..."
+                placeholder={t("contact.form.message")}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required
@@ -119,7 +121,7 @@ const ContactSection = () => {
                 className="resize-none flex-1 min-h-[100px]"
               />
               <Button type="submit" variant="hero" size="lg" className="w-full group mt-auto">
-                Odoslať správu
+                {t("contact.form.submit")}
                 <Send className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </form>
