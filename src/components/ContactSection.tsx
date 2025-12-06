@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, MapPin, Send, Clock, MessageCircle } from "lucide-react";
+import { Phone, MapPin, Send, Clock, MessageCircle, Loader2 } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -19,14 +19,39 @@ const ContactSection = () => {
     phone: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: t("contact.toast.title"),
-      description: t("contact.toast.description"),
-    });
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xgvgzqlb", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast({
+          title: t("contact.toast.title"),
+          description: t("contact.toast.description"),
+        });
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        throw new Error("Failed to send");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -120,9 +145,15 @@ const ContactSection = () => {
                 rows={4}
                 className="resize-none flex-1 min-h-[100px]"
               />
-              <Button type="submit" variant="hero" size="lg" className="w-full group mt-auto">
-                {t("contact.form.submit")}
-                <Send className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <Button type="submit" variant="hero" size="lg" className="w-full group mt-auto" disabled={isSubmitting}>
+                {isSubmitting ? (
+                  <Loader2 className="h-5 w-5 animate-spin" />
+                ) : (
+                  <>
+                    {t("contact.form.submit")}
+                    <Send className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </>
+                )}
               </Button>
             </form>
           </div>
