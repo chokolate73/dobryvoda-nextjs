@@ -1,29 +1,31 @@
 import { AlertTriangle, Wrench, ShieldCheck, Clock } from "lucide-react";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ServicesSection = () => {
   const headerRef = useScrollAnimation({ threshold: 0.2 });
   const cardsRef = useScrollAnimation({ threshold: 0.1 });
   const noteRef = useScrollAnimation({ threshold: 0.2 });
+  const { t } = useLanguage();
 
   const emergencyServices = [
-    "Únik vody / prasknuté potrubie",
-    "Zatekanie, havarijné opravy",
-    "Odstránenie porúch na rozvodoch studenej a teplej vody",
-    "Riešenie upchatia (drez, umývadlo, WC)",
+    t("services.emergency.1"),
+    t("services.emergency.2"),
+    t("services.emergency.3"),
+    t("services.emergency.4"),
   ];
 
   const regularServices = [
-    "Výmena sifónu",
-    "Výmena batérie (kuchyňa/kúpeľňa)",
-    "Výmena a montáž WC",
-    "Montáž a výmena ventilov",
-    "Montáž zdravotechniky a sanity",
-    "Oprava vodovodného potrubia",
-    "Výmena a montáž rozvodov vody",
-    "Výmena rozvodov kanalizácie v bytoch a rodinných domoch",
-    "Montáž vykurovania v bytoch a domoch (radiátory, rozvody, prípojky)",
-    "Montáž a pripojenie plynových zariadení",
+    t("services.regular.1"),
+    t("services.regular.2"),
+    t("services.regular.3"),
+    t("services.regular.4"),
+    t("services.regular.5"),
+    t("services.regular.6"),
+    t("services.regular.7"),
+    t("services.regular.8"),
+    t("services.regular.9"),
+    t("services.regular.10"),
   ];
 
   return (
@@ -35,14 +37,14 @@ const ServicesSection = () => {
           className={`text-center max-w-2xl mx-auto mb-16 scroll-animate ${headerRef.isVisible ? "visible" : ""}`}
         >
           <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-3 block">
-            Naše služby
+            {t("services.label")}
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Čo pre vás
-            <span className="text-gradient"> môžeme urobiť</span>
+            {t("services.title1")}
+            <span className="text-gradient">{t("services.title2")}</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Profesionálna inštalácia a oprava vodovodných systémov s dôrazom na kvalitu a spokojnosť zákazníka.
+            {t("services.description")}
           </p>
         </div>
 
@@ -62,7 +64,7 @@ const ServicesSection = () => {
               </div>
               <div>
                 <h3 className="font-display text-2xl font-bold text-foreground">
-                  Havarijné služby
+                  {t("services.emergency.title")}
                 </h3>
                 <span className="text-destructive font-semibold">24/7</span>
               </div>
@@ -88,9 +90,9 @@ const ServicesSection = () => {
               </div>
               <div>
                 <h3 className="font-display text-2xl font-bold text-foreground">
-                  Montážne a bežné práce
+                  {t("services.regular.title")}
                 </h3>
-                <span className="text-muted-foreground">PON-PIA 7:00 - 17:00</span>
+                <span className="text-muted-foreground">{t("services.regular.hours")}</span>
               </div>
             </div>
             <ul className="space-y-3">
@@ -110,10 +112,10 @@ const ServicesSection = () => {
           className={`mt-12 bg-accent/50 rounded-2xl p-6 lg:p-8 text-center scroll-animate ${noteRef.isVisible ? "visible" : ""}`}
         >
           <h4 className="font-display text-xl font-bold text-foreground mb-2">
-            Ceny sú individuálne
+            {t("services.pricing.title")}
           </h4>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Presná suma závisí od typu práce a stavu zariadenia. Pre presnú cenu ma kontaktujte telefonicky alebo správou.
+            {t("services.pricing.description")}
           </p>
         </div>
       </div>

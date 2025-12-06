@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 import work1 from "@/assets/work-1.jpg";
 import work2 from "@/assets/work-2.jpg";
@@ -10,18 +11,19 @@ import work4 from "@/assets/work-4.jpg";
 import work5 from "@/assets/work-5.jpg";
 import work6 from "@/assets/work-6.jpg";
 
-const works = [
-  { id: 1, image: work1, title: "Inštalácia sprchy" },
-  { id: 2, image: work2, title: "Sprchovací kút" },
-  { id: 3, image: work3, title: "Moderná kúpeľňa" },
-  { id: 4, image: work4, title: "WC inštalácia" },
-  { id: 5, image: work5, title: "Sprchový systém" },
-  { id: 6, image: work6, title: "Dvojumývadlo" },
-];
-
 const OurWorkSection = () => {
   const headerRef = useScrollAnimation({ threshold: 0.2 });
   const carouselRef = useScrollAnimation({ threshold: 0.1 });
+  const { t } = useLanguage();
+
+  const works = [
+    { id: 1, image: work1, title: t("work.1") },
+    { id: 2, image: work2, title: t("work.2") },
+    { id: 3, image: work3, title: t("work.3") },
+    { id: 4, image: work4, title: t("work.4") },
+    { id: 5, image: work5, title: t("work.5") },
+    { id: 6, image: work6, title: t("work.6") },
+  ];
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { 
@@ -48,13 +50,13 @@ const OurWorkSection = () => {
           className={`text-center mb-12 scroll-animate ${headerRef.isVisible ? "visible" : ""}`}
         >
           <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4">
-            Naše práce
+            {t("work.label")}
           </span>
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-            Ukážky našej práce
+            {t("work.title")}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Pozrite si niektoré z našich dokončených projektov. Kvalita a precíznosť v každom detaile.
+            {t("work.description")}
           </p>
         </div>
 

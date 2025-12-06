@@ -1,13 +1,15 @@
 import useScrollAnimation from "@/hooks/useScrollAnimation";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const StatsSection = () => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
+  const { t } = useLanguage();
 
   const stats = [
-    { value: "200+", label: "Spokojných klientov" },
-    { value: "10", label: "Rokov skúseností" },
-    { value: "300+", label: "Dokončených projektov" },
-    { value: "24/7", label: "Pohotovostná služba" },
+    { value: "200+", label: t("stats.clients") },
+    { value: "10", label: t("stats.years") },
+    { value: "300+", label: t("stats.projects") },
+    { value: "24/7", label: t("stats.service") },
   ];
 
   return (

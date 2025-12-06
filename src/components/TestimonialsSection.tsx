@@ -1,27 +1,29 @@
 import { Star } from "lucide-react";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const TestimonialsSection = () => {
   const headerRef = useScrollAnimation({ threshold: 0.2 });
   const cardsRef = useScrollAnimation({ threshold: 0.1 });
+  const { t } = useLanguage();
 
   const testimonials = [
     {
-      name: "Martin Kováč",
-      role: "Majiteľ domu",
-      content: "Výborná služba! Vodoinštalatér prišiel promptne a rýchlo vyriešil problém s mojím umývadlom. Profesionálny, zdvorilý a veľmi zručný. Vrelo odporúčam!",
+      name: t("testimonials.1.name"),
+      role: t("testimonials.1.role"),
+      content: t("testimonials.1.content"),
       rating: 5,
     },
     {
-      name: "Jana Horváthová",
-      role: "Majiteľka bytu",
-      content: "Fantastická skúsenosť! Tím bol veľmi profesionálny a cena bola férová. Opravili mi celú kúpeľňu za jeden deň. Určite ich budem kontaktovať znova.",
+      name: t("testimonials.2.name"),
+      role: t("testimonials.2.role"),
+      content: t("testimonials.2.content"),
       rating: 5,
     },
     {
-      name: "Peter Novák",
-      role: "Správca budovy",
-      content: "Spoľahlivá firma s rozumnými cenami. Pomohli nám s výmenou všetkých potrubí v celej budove. Práca bola dokončená v termíne a v rozpočte.",
+      name: t("testimonials.3.name"),
+      role: t("testimonials.3.role"),
+      content: t("testimonials.3.content"),
       rating: 5,
     },
   ];
@@ -35,14 +37,14 @@ const TestimonialsSection = () => {
           className={`text-center max-w-2xl mx-auto mb-16 scroll-animate ${headerRef.isVisible ? "visible" : ""}`}
         >
           <span className="text-primary font-semibold text-sm uppercase tracking-wider mb-3 block">
-            Referencie
+            {t("testimonials.label")}
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Čo hovoria naši
-            <span className="text-gradient"> spokojní zákazníci</span>
+            {t("testimonials.title1")}
+            <span className="text-gradient">{t("testimonials.title2")}</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Príbehy úspešných projektov a spokojných zákazníkov, ktorí nám zverili svoje vodoinštalačné potreby.
+            {t("testimonials.description")}
           </p>
         </div>
 
