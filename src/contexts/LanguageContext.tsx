@@ -146,6 +146,19 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.hours": "PON-PIA 7:00 - 17:00",
     "footer.emergency": "Havárie: 24/7",
     "footer.copyright": "Všetky práva vyhradené.",
+
+    // Siphon Page Specific (SK)
+    "siphon.seo.title": "Výmena sifónu Bratislava | Oprava & Montáž | Dobrý Vodár",
+    "siphon.seo.description": "Profesionálna výmena sifónu v kuchyni, kúpeľni a WC. Riešime pretekanie, zápach a upchaté sifóny. Rýchly výjazd v Bratislave. Volajte 0944 562 059.",
+    "siphon.seo.keywords": "výmena sifónu, oprava sifónu, montáž sifónu, sifón umývadlo, sifón vaňa, pretekajúci sifón, vodoinštalatér bratislava",
+    "siphon.hero.title": "Výmena a oprava sifónov",
+    "siphon.hero.subtitle": "Profesionálne riešenie pre vašu kuchyňu a kúpeľňu",
+    "siphon.problem.title": "Máte problém so sifónom?",
+    "siphon.problem.1": "Pretekajúca voda pod umývadlom",
+    "siphon.problem.2": "Nepríjemný zápach z odpadu",
+    "siphon.problem.3": "Upchatý alebo neodtekajúci sifón",
+    "siphon.problem.4": "Starý a skorodovaný materiál",
+    "siphon.cta": "Objednať výmenu",
   },
   en: {
     // SEO Specific
@@ -284,6 +297,19 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.hours": "MON-FRI 7:00 - 17:00",
     "footer.emergency": "Emergency: 24/7",
     "footer.copyright": "All rights reserved.",
+
+    // Siphon Page Specific (EN)
+    "siphon.seo.title": "Siphon Replacement Bratislava | Repair & Installation",
+    "siphon.seo.description": "Professional siphon replacement for kitchen, bathroom and WC. We fix leaking, bad smell and clogged siphons. Fast service in Bratislava.",
+    "siphon.seo.keywords": "siphon replacement, siphon repair, siphon installation, sink siphon, bathtub siphon, leaking siphon, plumber bratislava",
+    "siphon.hero.title": "Siphon Replacement & Repair",
+    "siphon.hero.subtitle": "Professional solutions for your kitchen and bathroom",
+    "siphon.problem.title": "Having trouble with your siphon?",
+    "siphon.problem.1": "Leaking water under the sink",
+    "siphon.problem.2": "Unpleasant smell from the drain",
+    "siphon.problem.3": "Clogged or slow draining siphon",
+    "siphon.problem.4": "Old and corroded material",
+    "siphon.cta": "Book Replacement",
   },
 };
 
