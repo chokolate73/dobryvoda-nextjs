@@ -49,6 +49,7 @@ const SeoHead = () => {
       <meta property="og:url" content="https://dobryvodar.sk/" />
       <meta property="og:title" content={t("seo.title")} />
       <meta property="og:description" content={t("seo.description")} />
+      <meta property="og:image" content="https://dobryvodar.sk/og-image.png" />
       <meta property="og:locale" content={language === 'sk' ? 'sk_SK' : 'en_US'} />
 
       {/* Twitter */}
@@ -56,6 +57,7 @@ const SeoHead = () => {
       <meta property="twitter:url" content="https://dobryvodar.sk/" />
       <meta property="twitter:title" content={t("seo.title")} />
       <meta property="twitter:description" content={t("seo.description")} />
+      <meta property="twitter:image" content="https://dobryvodar.sk/og-image.png" />
 
       {/* Canonical URL */}
       <link rel="canonical" href="https://dobryvodar.sk/" />
