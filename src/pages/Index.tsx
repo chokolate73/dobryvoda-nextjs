@@ -8,10 +8,12 @@ import ContactSection from "@/components/ContactSection";
 import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import FloatingPhoneButton from "@/components/FloatingPhoneButton";
+import SeoHead from "@/components/SeoHead";
 
 const Index = () => {
   return (
     <main className="min-h-screen">
+      <SeoHead />
       <Navbar />
       <HeroSection />
       <StatsSection />
