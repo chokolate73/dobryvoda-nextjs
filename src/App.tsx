@@ -5,17 +5,15 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { LanguageProvider } from "@/contexts/LanguageContext";
-import SeoHead from "@/components/SeoHead";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
 const App = () => (
-  <HelmetProvider>
-    <QueryClientProvider client={queryClient}>
+  <QueryClientProvider client={queryClient}>
+    <HelmetProvider>
       <LanguageProvider>
-        <SeoHead />
         <TooltipProvider>
           <Toaster />
           <Sonner />
@@ -28,8 +26,8 @@ const App = () => (
           </BrowserRouter>
         </TooltipProvider>
       </LanguageProvider>
-    </QueryClientProvider>
-  </HelmetProvider>
+    </HelmetProvider>
+  </QueryClientProvider>
 );
 
 export default App;
