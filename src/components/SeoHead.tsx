@@ -1,10 +1,21 @@
 import { Helmet } from "react-helmet-async";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const SeoHead = () => {
+interface SeoHeadProps {
+  title?: string;
+  description?: string;
+  keywords?: string;
+}
+
+const SeoHead = ({ title, description, keywords }: SeoHeadProps) => {
   const { t, language } = useLanguage();
 
-  // Structured Data for Local Business (Plumber)
+  // Use props if provided, otherwise fallback to default translations
+  const finalTitle = title || t("seo.title");
+  const finalDescription = description || t("seo.description");
+  const finalKeywords = keywords || t("seo.keywords");
+
+  // Structured Data for Local Business
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "PlumbingService",
@@ -12,61 +23,33 @@ const SeoHead = () => {
     "image": "https://dobryvodar.sk/assets/logo-new.png",
     "telephone": "+421944562059",
     "url": "https://dobryvodar.sk",
-    "description": t("seo.description"),
+    "description": finalDescription,
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Bratislava",
       "addressCountry": "SK"
     },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "07:00",
-        "closes": "17:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Saturday", "Sunday"],
-        "description": "Emergency Service 24/7"
-      }
-    ],
     "priceRange": "$$"
   };
 
   return (
     <Helmet>
-      {/* Primary Meta Tags */}
       <html lang={language} />
-      <title>{t("seo.title")}</title>
-      <meta name="description" content={t("seo.description")} />
-      <meta name="keywords" content={t("seo.keywords")} />
-      <meta name="author" content="Dobrý Vodár" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://dobryvodar.sk/" />
-      <meta property="og:title" content={t("seo.title")} />
-      <meta property="og:description" content={t("seo.description")} />
-      <meta property="og:image" content="https://dobryvodar.sk/og-image.png" />
-      <meta property="og:locale" content={language === 'sk' ? 'sk_SK' : 'en_US'} />
-
-      {/* Twitter */}
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content="https://dobryvodar.sk/" />
-      <meta property="twitter:title" content={t("seo.title")} />
-      <meta property="twitter:description" content={t("seo.description")} />
-      <meta property="twitter:image" content="https://dobryvodar.sk/og-image.png" />
-
-      {/* Canonical URL */}
-      <link rel="canonical" href="https://dobryvodar.sk/" />
+      <title>{finalTitle}</title>
+      <meta name="description" content={finalDescription} />
+      <meta name="keywords" content={finalKeywords} />
       
-      {/* Alternate languages */}
-      <link rel="alternate" href="https://dobryvodar.sk/" hrefLang="sk" />
-      <link rel="alternate" href="https://dobryvodar.sk/" hrefLang="x-default" />
-
-      {/* JSON-LD Structured Data */}
+      <meta property="og:title" content={finalTitle} />
+      <meta property="og:description" content={finalDescription} />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="https://dobryvodar.sk/og-image.png" />
+      
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:title" content={finalTitle} />
+      <meta property="twitter:description" content={finalDescription} />
+      <meta property="twitter:image" content="https://dobryvodar.sk/og-image.png" />
+      
+      <link rel="canonical" href={typeof window !== 'undefined' ? window.location.href : 'https://dobryvodar.sk'} />
       <script type="application/ld+json">
         {JSON.stringify(jsonLd)}
       </script>
