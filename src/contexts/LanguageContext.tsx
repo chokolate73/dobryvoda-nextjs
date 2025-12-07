@@ -10,6 +10,11 @@ interface LanguageContextType {
 
 const translations: Record<Language, Record<string, string>> = {
   sk: {
+    // SEO Specific
+    "seo.title": "Dobrý Vodár Bratislava | Havarijná služba & Opravy 24/7",
+    "seo.description": "Profesionálny vodoinštalatér v Bratislave a okolí. Rýchle opravy potrubí, montáž sanity, čistenie odpadov a havarijná služba 24/7. Volajte 0944 562 059.",
+    "seo.keywords": "vodoinštalatér bratislava, oprava vody, havarijná služba voda, čistenie odpadov, inštalatér, výmena batérie, dobrý vodár",
+    
     // Navbar
     "nav.home": "Domov",
     "nav.services": "Služby",
@@ -29,7 +34,7 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.benefit3": "Bratislava a okolie",
     "hero.cta.call": "Zavolať teraz",
     "hero.cta.services": "Naše služby",
-    "hero.image.alt": "Profesionálny vodoinštalatér",
+    "hero.image.alt": "Profesionálny vodoinštalatér Bratislava",
 
     // Stats
     "stats.clients": "Spokojných klientov",
@@ -143,6 +148,11 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.copyright": "Všetky práva vyhradené.",
   },
   en: {
+    // SEO Specific
+    "seo.title": "Good Plumber Bratislava | Emergency Service & Repairs 24/7",
+    "seo.description": "Professional plumber in Bratislava. Fast pipe repairs, sanitary installation, drain cleaning and 24/7 emergency service. Call 0944 562 059.",
+    "seo.keywords": "plumber bratislava, water repair, emergency plumber, drain cleaning, sanitary installation, good plumber",
+
     // Navbar
     "nav.home": "Home",
     "nav.services": "Services",
@@ -162,7 +172,7 @@ const translations: Record<Language, Record<string, string>> = {
     "hero.benefit3": "Bratislava and surroundings",
     "hero.cta.call": "Call Now",
     "hero.cta.services": "Our Services",
-    "hero.image.alt": "Professional plumber",
+    "hero.image.alt": "Professional plumber Bratislava",
 
     // Stats
     "stats.clients": "Satisfied Clients",
