@@ -123,9 +123,20 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-primary-foreground/20 text-center">
+        <div className="pt-8 border-t border-primary-foreground/20 text-center space-y-2">
           <p className="text-primary-foreground/60 text-sm">
             © {currentYear} Dobrý vodár. {t("footer.copyright")}
+          </p>
+          <p className="text-primary-foreground/40 text-xs">
+            Made by{" "}
+            <a
+              href="https://umka.lol/en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary-foreground transition-colors underline"
+            >
+              /umka
+            </a>
           </p>
         </div>
       </div>
