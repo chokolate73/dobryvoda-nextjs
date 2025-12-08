@@ -63,7 +63,6 @@ const translations: Record<Language, Record<string, string>> = {
     "services.regular.7": "Výmena a montáž rozvodov vody",
     "services.regular.8": "Výmena rozvodov kanalizácie v bytoch a rodinných domoch",
     "services.regular.9": "Montáž vykurovania v bytoch a domoch (radiátory, rozvody, prípojky)",
-    "services.regular.10": "Montáž a pripojenie plynových zariadení",
     "services.pricing.title": "Ceny sú individuálne",
     "services.pricing.description": "Presná suma závisí od typu práce a stavu zariadenia. Pre presnú cenu ma kontaktujte telefonicky alebo správou.",
 
@@ -343,7 +342,6 @@ const translations: Record<Language, Record<string, string>> = {
     "services.regular.7": "Water pipe installation",
     "services.regular.8": "Sewer pipe replacement in apartments and houses",
     "services.regular.9": "Heating installation (radiators, pipes, connections)",
-    "services.regular.10": "Gas equipment installation and connection",
     "services.pricing.title": "Prices are individual",
     "services.pricing.description": "The exact amount depends on the type of work and condition of the equipment. Contact me by phone or message for an exact price.",
 

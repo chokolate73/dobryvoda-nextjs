@@ -25,7 +25,6 @@ const ServicesSection = () => {
     t("services.regular.7"),
     t("services.regular.8"),
     t("services.regular.9"),
-    t("services.regular.10"),
   ];
 
   return (
