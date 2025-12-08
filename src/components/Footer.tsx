@@ -20,7 +20,6 @@ const Footer = () => {
     t("footer.service.3"),
     t("footer.service.4"),
     t("footer.service.5"),
-    t("footer.service.6"),
   ];
 
   return (
