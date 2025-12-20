@@ -1,0 +1,14 @@
+{
+  "name": "Dobrý Vodár",
+  "short_name": "DobryVodar",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1e40af",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
