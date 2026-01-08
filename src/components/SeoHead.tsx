@@ -49,7 +49,7 @@ const SeoHead = ({ title, description, keywords }: SeoHeadProps) => {
       <meta property="twitter:description" content={finalDescription} />
       <meta property="twitter:image" content="https://dobryvodar.sk/og-image.png" />
       
-      <link rel="canonical" href={`https://dobryvodar.sk${typeof window !== 'undefined' ? window.location.pathname : '/'}`} />
+      <link rel="canonical" href={typeof window !== 'undefined' ? window.location.href : 'https://dobryvodar.sk'} />
       <script type="application/ld+json">
         {JSON.stringify(jsonLd)}
       </script>
