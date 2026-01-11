@@ -17,6 +17,7 @@ import ServiceSanitary from "./pages/services/ServiceSanitary";
 import ServiceHeating from "./pages/services/ServiceHeating";
 import ServiceBoiler from "./pages/services/ServiceBoiler";
 import ServicePipes from "./pages/services/ServicePipes";
+import Kanalizacia from "./pages/Kanalizacia";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -43,6 +44,7 @@ const App = () => (
               <Route path="/oprava-kurenia" element={<ServiceHeating />} />
               <Route path="/montaz-bojleru" element={<ServiceBoiler />} />
               <Route path="/vymena-rozvodov" element={<ServicePipes />} />
+              <Route path="/kanalizacia" element={<Kanalizacia />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
