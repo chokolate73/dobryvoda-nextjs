@@ -9,11 +9,23 @@ import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import FloatingPhoneButton from "@/components/FloatingPhoneButton";
 import SeoHead from "@/components/SeoHead";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
+  const { t } = useLanguage();
+
+  // FAQ data for structured data
+  const faqs = [
+    { question: t("faq.1.question"), answer: t("faq.1.answer") },
+    { question: t("faq.2.question"), answer: t("faq.2.answer") },
+    { question: t("faq.3.question"), answer: t("faq.3.answer") },
+    { question: t("faq.4.question"), answer: t("faq.4.answer") },
+    { question: t("faq.5.question"), answer: t("faq.5.answer") },
+  ];
+
   return (
     <main className="min-h-screen">
-      <SeoHead />
+      <SeoHead faqs={faqs} />
       <Navbar />
       <HeroSection />
       <StatsSection />

@@ -92,12 +92,28 @@ const Kanalizacia = () => {
     }
   ];
 
+  // Breadcrumbs for structured data
+  const breadcrumbs = [
+    { name: "Domov", url: "https://dobryvodar.sk" },
+    { name: "Krtkovanie a čistenie kanalizácie", url: "https://dobryvodar.sk/kanalizacia" }
+  ];
+
+  // FAQ data for this page
+  const pageFaqs = reviews.map(review => ({
+    question: `Skúsenosť zákazníka: ${review.name} z ${review.location}`,
+    answer: review.text
+  }));
+
   return (
     <main className="min-h-screen">
       <SeoHead 
         title="Krtkovanie a Čistenie Kanalizácie Bratislava | Ridgid FlexShaft"
         description="Profesionálne krtkovanie a čistenie kanalizácie v Bratislave. Najnovšia technológia Ridgid FlexShaft K9-102. Rýchly výjazd, férové ceny. Volajte 0944 562 059."
         keywords="krtkovanie, čistenie kanalizácie, upchatý odpad, profesionálne čistenie potrubia, krtkovanie bratislava, ridgid flexshaft"
+        breadcrumbs={breadcrumbs}
+        serviceType="Čistenie kanalizácie"
+        serviceName="Krtkovanie a čistenie kanalizácie Bratislava"
+        faqs={pageFaqs}
       />
       
       <Navbar />
