@@ -129,12 +129,12 @@ const Footer = () => {
           <p className="text-primary-foreground/40 text-xs">
             Made by{" "}
             <a
-              href="https://umka.lol/en"
+              href="https://vlad-weby.sk"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary-foreground transition-colors underline"
             >
-              /umka
+              vlad-weby.sk
             </a>
           </p>
         </div>
