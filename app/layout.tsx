@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://dobryvodar.sk"),
   title: {
     default: "Dobrý Vodár Bratislava | Havarijná služba & Opravy 24/7",
-    template: "%s | Dobrý Vodár",
+    template: "%s",
   },
   description:
     "Profesionálny vodoinštalatér v Bratislave a okolí. Rýchle opravy potrubí, montáž sanity, čistenie odpadov a havarijná služba 24/7. Volajte 0944 562 059.",
