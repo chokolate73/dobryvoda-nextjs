@@ -17,5 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/montaz-bojleru`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/vymena-rozvodov`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/kanalizacia`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/krtkovanie`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/filtre-na-vodu`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
   ];
 }

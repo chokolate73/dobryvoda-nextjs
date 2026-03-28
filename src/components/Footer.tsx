@@ -23,6 +23,8 @@ const Footer = () => {
     { name: t("footer.service.3"), href: "/vymena-sifonu" },
     { name: t("footer.service.4"), href: "/kanalizacia" },
     { name: t("footer.service.5"), href: "/oprava-kurenia" },
+    { name: t("footer.service.6"), href: "/krtkovanie" },
+    { name: t("footer.service.7"), href: "/filtre-na-vodu" },
   ];
 
   return (
