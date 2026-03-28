@@ -34,6 +34,57 @@ export const localBusinessSchema = {
     },
   ],
   priceRange: "$$",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    reviewCount: "6",
+    bestRating: "5",
+    worstRating: "1",
+  },
+  review: [
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Bartolomej Proščák" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      reviewBody:
+        "Profesionálny prístup, dobrá cena a kvalitná práca. Vymenený celý sprchový kút, sprchový systém, termostatická batéria. Demontáž, montáž, odvoz, dovoz. Všetko v poriadku. Určite ak budeme potrebovať, opätovne sa obrátime na Dobrého vodára. Odporúčame.",
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Rene" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      reviewBody:
+        "Perfektny vodar, super sluzba a profesionalita, od zavolania do hodiny sa dostavil a opravil, a to bolo v sobotu. Doporucujem vsetkym.",
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Viktor Bab" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      reviewBody:
+        "S inštalatérskymi službami som maximálne spokojný. Prerábal mi radiátory a práca bola urobená rýchlo, kvalitne a za veľmi rozumnú cenu. Oceňujem profesionálny prístup, spoľahlivosť a detailné spracovanie. Určite odporúčam každému, kto hľadá kvalitného inštalatéra.",
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Yaroslava Svitlyk" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      reviewBody:
+        "Som veľmi spokojná so službami. Prišiel rýchlo, všetko profesionálne vysvetlil a problém vyriešil za chvíľu. Určite odporúčam.",
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Miroslava Š." },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      reviewBody:
+        "Mali sme dlhodobý problém – vlhla nám stena. Nevedeli sme prísť na to, z čoho to je, tak sme zavolali pána. Do 30 minút bola príčina nájdená a problém vyriešený, a hlavne za adekvátnu cenu. Klobúk dole.",
+    },
+    {
+      "@type": "Review",
+      author: { "@type": "Person", name: "Richard Tekel" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      reviewBody:
+        "Spokojnosť. Rýchla reakcia, mal som šťastie na skorý termín a havária v stúpačke bola vyriešená bez problémov. Veľmi dobrý prístup.",
+    },
+  ],
   sameAs: [],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
