@@ -105,7 +105,7 @@ const TestimonialsSection = () => {
             {visibleTestimonials.map((testimonial, index) => (
               <div
                 key={testimonial.name}
-                className="p-6 lg:p-8 bg-card rounded-2xl card-shadow hover:card-shadow-hover transition-all duration-300"
+                className="p-6 lg:p-8 bg-card rounded-2xl card-shadow hover:card-shadow-hover transition-all duration-300 flex flex-col"
                 style={{ transitionDelay: `${index * 0.15}s` }}
               >
                 {/* Rating & Google Badge */}
@@ -114,11 +114,7 @@ const TestimonialsSection = () => {
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
-                        className={`h-5 w-5 ${
-                          i < testimonial.rating
-                            ? "fill-primary text-primary"
-                            : "fill-muted text-muted"
-                        }`}
+                        className="h-5 w-5 fill-primary text-primary"
                       />
                     ))}
                   </div>
@@ -129,13 +125,13 @@ const TestimonialsSection = () => {
                 </div>
 
                 {/* Content */}
-                <p className="text-foreground/80 leading-relaxed mb-6 text-sm">
+                <p className="text-foreground/80 leading-relaxed mb-6 text-sm flex-1">
                   &ldquo;{testimonial.content}&rdquo;
                 </p>
 
                 {/* Author */}
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
+                <div className="flex items-center gap-4 mt-auto">
+                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center shrink-0">
                     <span className="text-primary font-bold text-lg">
                       {testimonial.name.charAt(0)}
                     </span>
