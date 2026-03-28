@@ -105,7 +105,7 @@ const TestimonialsSection = () => {
             {visibleTestimonials.map((testimonial, index) => (
               <div
                 key={testimonial.name}
-                className="p-6 lg:p-8 bg-card rounded-2xl card-shadow hover:card-shadow-hover transition-all duration-300 flex flex-col h-full"
+                className="p-6 lg:p-8 bg-card rounded-2xl card-shadow hover:card-shadow-hover transition-all duration-300 flex flex-col h-full min-h-[320px]"
                 style={{ transitionDelay: `${index * 0.15}s` }}
               >
                 {/* Rating & Google Badge */}
