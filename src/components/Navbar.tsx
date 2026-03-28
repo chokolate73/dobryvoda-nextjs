@@ -12,11 +12,11 @@ const Navbar = () => {
   const { t } = useLanguage();
 
   const navLinks = [
-    { name: t("nav.home"), href: "#domov" },
-    { name: t("nav.services"), href: "#sluzby" },
-    { name: t("nav.work"), href: "#prace" },
-    { name: t("nav.references"), href: "#referencie" },
-    { name: t("nav.contact"), href: "#kontakt" },
+    { name: t("nav.home"), href: "/#domov" },
+    { name: t("nav.services"), href: "/#sluzby" },
+    { name: t("nav.work"), href: "/#prace" },
+    { name: t("nav.references"), href: "/#referencie" },
+    { name: t("nav.contact"), href: "/#kontakt" },
   ];
 
   return (
@@ -24,7 +24,7 @@ const Navbar = () => {
       <div className="container mx-auto">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#domov" className="flex items-center gap-2">
+          <a href="/" className="flex items-center gap-2">
             <Image src="/images/logo.png" alt="Dobrý vodár" width={120} height={56} className="h-14 w-auto" priority />
           </a>
 
@@ -49,7 +49,7 @@ const Navbar = () => {
               0944 562 059
             </a>
             <Button variant="hero" size="default" asChild>
-              <a href="#kontakt">{t("nav.book")}</a>
+              <a href="/#kontakt">{t("nav.book")}</a>
             </Button>
           </div>
 
@@ -85,7 +85,7 @@ const Navbar = () => {
                 0944 562 059
               </a>
               <Button variant="hero" className="mt-2" asChild>
-                <a href="#kontakt">{t("nav.book")}</a>
+                <a href="/#kontakt">{t("nav.book")}</a>
               </Button>
             </div>
           </div>
