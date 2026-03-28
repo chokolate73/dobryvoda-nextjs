@@ -273,7 +273,7 @@ export default function OpravaPotrabiaContent() {
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
               Prečo si vybrať nás?
             </h2>
-            <p className="text-primary-foreground/80 max-w-2xl mx-auto text-lg">
+            <p className="text-foreground/70 max-w-2xl mx-auto text-lg">
               Sme skúsený tím inštalatérov, ktorý sa špecializuje na opravy vodovodného potrubia v Bratislave. Kladieme dôraz na kvalitu, rýchlosť a férový prístup ku každému zákazníkovi.
             </p>
           </div>
@@ -281,11 +281,11 @@ export default function OpravaPotrabiaContent() {
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {trustPoints.map((point, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-primary-foreground/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
                   <point.icon className="h-8 w-8" />
                 </div>
                 <h3 className="font-display text-xl font-bold mb-2">{point.title}</h3>
-                <p className="text-primary-foreground/80">{point.description}</p>
+                <p className="text-foreground/70">{point.description}</p>
               </div>
             ))}
           </div>
@@ -349,14 +349,14 @@ export default function OpravaPotrabiaContent() {
       </section>
 
       {/* Contact / Emergency Footer */}
-      <section id="kontakt" className="py-16 md:py-24 bg-foreground text-primary-foreground">
+      <section id="kontakt" className="py-16 md:py-24 bg-background">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
               <h2 className="font-display text-3xl md:text-4xl font-bold mb-6">
-                Potrebujete <span className="text-primary-light">opravu potrubia</span>?
+                Potrebujete <span className="text-primary">opravu potrubia</span>?
               </h2>
-              <p className="text-lg text-primary-foreground/70 mb-8">
+              <p className="text-lg text-muted-foreground mb-8">
                 Zavolajte nám a vyriešime váš problém s potrubím rýchlo a profesionálne.
               </p>
 
@@ -368,9 +368,9 @@ export default function OpravaPotrabiaContent() {
                 0944 562 059
               </a>
 
-              <div className="space-y-4 text-primary-foreground/70">
+              <div className="space-y-4 text-muted-foreground">
                 <div className="flex items-center gap-3">
-                  <Clock className="h-5 w-5 text-primary-light" />
+                  <Clock className="h-5 w-5 text-primary" />
                   <span>Pracovná doba: PON - PIA 7:00 - 17:00</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -378,13 +378,13 @@ export default function OpravaPotrabiaContent() {
                   <span>Havárie: 24/7</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <MapPin className="h-5 w-5 text-primary-light" />
+                  <MapPin className="h-5 w-5 text-primary" />
                   <span>Bratislava a okolie</span>
                 </div>
               </div>
             </div>
 
-            <div className="bg-primary-foreground/10 rounded-2xl p-6 md:p-8">
+            <div className="bg-secondary/50 rounded-2xl p-6 md:p-8 border border-border">
               <h3 className="font-display text-xl font-bold mb-6">Napíšte nám</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
@@ -393,7 +393,7 @@ export default function OpravaPotrabiaContent() {
                     placeholder="Vaše meno"
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50"
+                    className="bg-background border-border text-foreground placeholder:text-muted-foreground"
                   />
                 </div>
                 <div>
@@ -402,7 +402,7 @@ export default function OpravaPotrabiaContent() {
                     placeholder="Telefónne číslo"
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50"
+                    className="bg-background border-border text-foreground placeholder:text-muted-foreground"
                   />
                 </div>
                 <div>
@@ -411,7 +411,7 @@ export default function OpravaPotrabiaContent() {
                     rows={4}
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
-                    className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50"
+                    className="bg-background border-border text-foreground placeholder:text-muted-foreground"
                   />
                 </div>
                 <Button

@@ -152,13 +152,13 @@ export default function KanalizaciaContent() {
           <div className="mt-12 max-w-4xl mx-auto bg-primary rounded-2xl p-8 text-primary-foreground">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="flex-shrink-0">
-                <div className="w-20 h-20 bg-primary-foreground/20 rounded-full flex items-center justify-center">
+                <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center">
                   <Wrench className="h-10 w-10" />
                 </div>
               </div>
               <div>
                 <h3 className="font-display text-2xl font-bold mb-2">Ridgid FlexShaft K9-102</h3>
-                <p className="text-primary-foreground/90">
+                <p className="text-foreground/80">
                   Profesionálny stroj na čistenie potrubia s priemerom 32-100mm.
                   Flexibilný kábel s rotujúcou reťazovou hlavicou odstraňuje aj tie najodolnejšie usadeniny.
                 </p>
@@ -255,11 +255,11 @@ export default function KanalizaciaContent() {
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
             {trustPoints.map((point, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-primary-foreground/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
                   <point.icon className="h-8 w-8" />
                 </div>
                 <h3 className="font-display text-xl font-bold mb-2">{point.title}</h3>
-                <p className="text-primary-foreground/80">{point.description}</p>
+                <p className="text-foreground/70">{point.description}</p>
               </div>
             ))}
           </div>
@@ -273,14 +273,14 @@ export default function KanalizaciaContent() {
                       <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
-                  <p className="text-primary-foreground/90 mb-4 italic">&quot;{review.text}&quot;</p>
+                  <p className="text-foreground/80 mb-4 italic">&quot;{review.text}&quot;</p>
                   <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 bg-primary-foreground/20 rounded-full flex items-center justify-center font-bold">
+                    <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center font-bold">
                       {review.name.charAt(0)}
                     </div>
                     <div>
                       <p className="font-semibold">{review.name}</p>
-                      <p className="text-sm text-primary-foreground/70">{review.location}</p>
+                      <p className="text-sm text-muted-foreground">{review.location}</p>
                     </div>
                   </div>
                 </CardContent>
@@ -311,14 +311,14 @@ export default function KanalizaciaContent() {
       </section>
 
       {/* Contact / Emergency Footer */}
-      <section id="kontakt" className="py-16 md:py-24 bg-foreground text-primary-foreground">
+      <section id="kontakt" className="py-16 md:py-24 bg-background">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
               <h2 className="font-display text-3xl md:text-4xl font-bold mb-6">
-                Potrebujete <span className="text-primary-light">krtkovanie</span>?
+                Potrebujete <span className="text-primary">krtkovanie</span>?
               </h2>
-              <p className="text-lg text-primary-foreground/70 mb-8">
+              <p className="text-lg text-muted-foreground mb-8">
                 Zavolajte nám a vyriešime váš problém s kanalizáciou rýchlo a profesionálne.
               </p>
 
@@ -330,9 +330,9 @@ export default function KanalizaciaContent() {
                 0944 562 059
               </a>
 
-              <div className="space-y-4 text-primary-foreground/70">
+              <div className="space-y-4 text-muted-foreground">
                 <div className="flex items-center gap-3">
-                  <Clock className="h-5 w-5 text-primary-light" />
+                  <Clock className="h-5 w-5 text-primary" />
                   <span>Pracovná doba: PON - PIA 7:00 - 17:00</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -340,13 +340,13 @@ export default function KanalizaciaContent() {
                   <span>Havárie: 24/7</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <MapPin className="h-5 w-5 text-primary-light" />
+                  <MapPin className="h-5 w-5 text-primary" />
                   <span>Bratislava a okolie</span>
                 </div>
               </div>
             </div>
 
-            <div className="bg-primary-foreground/10 rounded-2xl p-6 md:p-8">
+            <div className="bg-secondary/50 rounded-2xl p-6 md:p-8 border border-border">
               <h3 className="font-display text-xl font-bold mb-6">Napíšte nám</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
@@ -355,7 +355,7 @@ export default function KanalizaciaContent() {
                     placeholder="Vaše meno"
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50"
+                    className="bg-background border-border text-foreground placeholder:text-muted-foreground"
                   />
                 </div>
                 <div>
@@ -364,7 +364,7 @@ export default function KanalizaciaContent() {
                     placeholder="Telefónne číslo"
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50"
+                    className="bg-background border-border text-foreground placeholder:text-muted-foreground"
                   />
                 </div>
                 <div>
@@ -373,7 +373,7 @@ export default function KanalizaciaContent() {
                     rows={4}
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
-                    className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50"
+                    className="bg-background border-border text-foreground placeholder:text-muted-foreground"
                   />
                 </div>
                 <Button
