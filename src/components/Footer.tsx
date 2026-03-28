@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Phone, MapPin, Clock } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -9,19 +10,19 @@ const Footer = () => {
   const { t } = useLanguage();
 
   const quickLinks = [
-    { name: t("nav.home"), href: "#domov" },
-    { name: t("nav.services"), href: "#sluzby" },
-    { name: t("nav.work"), href: "#prace" },
-    { name: t("nav.references"), href: "#referencie" },
-    { name: t("nav.contact"), href: "#kontakt" },
+    { name: t("nav.home"), href: "/" },
+    { name: t("nav.services"), href: "/#sluzby" },
+    { name: t("nav.work"), href: "/#prace" },
+    { name: t("nav.references"), href: "/#referencie" },
+    { name: t("nav.contact"), href: "/#kontakt" },
   ];
 
-  const services = [
-    t("footer.service.1"),
-    t("footer.service.2"),
-    t("footer.service.3"),
-    t("footer.service.4"),
-    t("footer.service.5"),
+  const serviceLinks = [
+    { name: t("footer.service.1"), href: "/oprava-potrubia" },
+    { name: t("footer.service.2"), href: "/montaz-sanity" },
+    { name: t("footer.service.3"), href: "/vymena-sifonu" },
+    { name: t("footer.service.4"), href: "/kanalizacia" },
+    { name: t("footer.service.5"), href: "/oprava-kurenia" },
   ];
 
   return (
@@ -30,7 +31,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Image src="/images/logo-new.png" alt="Dobrý vodár" width={160} height={80} className="h-20 w-auto mb-4" />
+            <Image src="/images/logo-new.png" alt="Dobrý vodár - vodoinštalatér Bratislava" width={160} height={80} className="h-20 w-auto mb-4" />
             <p className="text-primary-foreground/70 leading-relaxed">
               {t("footer.description")}
             </p>
@@ -38,16 +39,16 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-display font-bold text-lg mb-4">{t("footer.quickLinks")}</h4>
+            <h3 className="font-display font-bold text-lg mb-4">{t("footer.quickLinks")}</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -55,11 +56,16 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-display font-bold text-lg mb-4">{t("footer.services")}</h4>
+            <h3 className="font-display font-bold text-lg mb-4">{t("footer.services")}</h3>
             <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service}>
-                  <span className="text-primary-foreground/70">{service}</span>
+              {serviceLinks.map((service) => (
+                <li key={service.href}>
+                  <Link
+                    href={service.href}
+                    className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                  >
+                    {service.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -67,7 +73,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-display font-bold text-lg mb-4">{t("footer.contact")}</h4>
+            <h3 className="font-display font-bold text-lg mb-4">{t("footer.contact")}</h3>
             <ul className="space-y-4">
               <li>
                 <a

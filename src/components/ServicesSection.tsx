@@ -111,9 +111,9 @@ const ServicesSection = () => {
           ref={noteRef.ref}
           className={`mt-12 bg-accent/50 rounded-2xl p-6 lg:p-8 text-center scroll-animate ${noteRef.isVisible ? "visible" : ""}`}
         >
-          <h4 className="font-display text-xl font-bold text-foreground mb-2">
+          <h3 className="font-display text-xl font-bold text-foreground mb-2">
             {t("services.pricing.title")}
-          </h4>
+          </h3>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             {t("services.pricing.description")}
           </p>

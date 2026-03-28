@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { seoData, serviceImages } from "@/lib/translations";
-import { localBusinessSchema, makeServiceSchema } from "@/lib/structured-data";
+import { ServiceSchemas } from "@/lib/service-schemas";
 import ServiceLayout from "@/components/ServiceLayout";
 
 const data = seoData.siphon;
@@ -20,15 +20,12 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(makeServiceSchema("Výmena sifónu", data.title, data.description)),
-        }}
+      <ServiceSchemas
+        serviceType="Výmena sifónu"
+        title={data.title}
+        description={data.description}
+        slug={data.slug}
+        pageName="Výmena sifónu"
       />
       <ServiceLayout translationKey="siphon" image={serviceImages.siphon} />
     </>

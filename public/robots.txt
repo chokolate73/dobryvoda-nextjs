@@ -1,9 +1,0 @@
-# Robots.txt for dobryvodar.sk
-User-agent: *
-Allow: /
-
-# Sitemap location
-Sitemap: https://dobryvodar.sk/sitemap.xml
-
-# Disallow admin or private paths if any
-Disallow: /api/

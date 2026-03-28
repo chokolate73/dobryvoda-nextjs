@@ -3,7 +3,9 @@ import { localBusinessSchema, makeFaqSchema } from "@/lib/structured-data";
 import HomeContent from "./home-content";
 
 export const metadata: Metadata = {
-  title: "Dobrý Vodár Bratislava | Havarijná služba & Opravy 24/7",
+  // 57 chars
+  title: "Vodoinštalatér Bratislava | Dobrý Vodár | Opravy 24/7",
+  // 155 chars
   description:
     "Profesionálny vodoinštalatér v Bratislave a okolí. Rýchle opravy potrubí, montáž sanity, čistenie odpadov a havarijná služba 24/7. Volajte 0944 562 059.",
   keywords:
@@ -12,9 +14,9 @@ export const metadata: Metadata = {
     canonical: "https://dobryvodar.sk",
   },
   openGraph: {
-    title: "Dobrý Vodár Bratislava | Havarijná služba & Opravy 24/7",
+    title: "Vodoinštalatér Bratislava | Dobrý Vodár | Opravy 24/7",
     description:
-      "Profesionálny vodoinštalatér v Bratislave a okolí. Rýchle opravy potrubí, montáž sanity, čistenie odpadov a havarijná služba 24/7.",
+      "Profesionálny vodoinštalatér v Bratislave a okolí. Rýchle opravy potrubí, montáž sanity, čistenie odpadov a havarijná služba 24/7. Volajte 0944 562 059.",
     url: "https://dobryvodar.sk",
   },
 };

@@ -21,7 +21,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://dobryvodar.sk"),
   title: {
-    default: "Dobrý Vodár Bratislava | Havarijná služba & Opravy 24/7",
+    default: "Vodoinštalatér Bratislava | Dobrý Vodár | Opravy 24/7",
     template: "%s",
   },
   description:
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     locale: "sk_SK",
     url: "https://dobryvodar.sk",
     siteName: "Dobrý Vodár",
-    title: "Dobrý Vodár Bratislava | Havarijná služba & Opravy 24/7",
+    title: "Vodoinštalatér Bratislava | Dobrý Vodár | Opravy 24/7",
     description:
       "Profesionálny vodoinštalatér v Bratislave a okolí. Rýchle opravy potrubí, montáž sanity, čistenie odpadov a havarijná služba 24/7.",
     images: [
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dobrý Vodár Bratislava | Havarijná služba & Opravy 24/7",
+    title: "Vodoinštalatér Bratislava | Dobrý Vodár | Opravy 24/7",
     description:
       "Profesionálny vodoinštalatér v Bratislave a okolí. Rýchle opravy potrubí, montáž sanity, čistenie odpadov a havarijná služba 24/7.",
     images: ["/og-image.png"],
