@@ -335,7 +335,7 @@ export default function KrtkovanieContent() {
               </div>
               <div>
                 <h3 className="font-display text-2xl font-bold mb-2">Ridgid FlexShaft K9-102</h3>
-                <p className="text-foreground/80">
+                <p className="text-primary-foreground/90">
                   Profesionálny stroj s rotujúcimi reťazovými hlavicami, ktoré čistia potrubie od steny k stene.
                   Vhodný pre priemery 32-100 mm. Na rozdiel od vysokotlakového čistenia je šetrný k potrubiu
                   a nespôsobuje špinenie interiéru.
@@ -439,7 +439,7 @@ export default function KrtkovanieContent() {
                   <point.icon className="h-8 w-8" />
                 </div>
                 <h3 className="font-display text-xl font-bold mb-2">{point.title}</h3>
-                <p className="text-foreground/70">{point.description}</p>
+                <p className="text-primary-foreground/80">{point.description}</p>
               </div>
             ))}
           </div>

@@ -158,7 +158,7 @@ export default function KanalizaciaContent() {
               </div>
               <div>
                 <h3 className="font-display text-2xl font-bold mb-2">Ridgid FlexShaft K9-102</h3>
-                <p className="text-foreground/80">
+                <p className="text-primary-foreground/90">
                   Profesionálny stroj na čistenie potrubia s priemerom 32-100mm.
                   Flexibilný kábel s rotujúcou reťazovou hlavicou odstraňuje aj tie najodolnejšie usadeniny.
                 </p>
@@ -259,7 +259,7 @@ export default function KanalizaciaContent() {
                   <point.icon className="h-8 w-8" />
                 </div>
                 <h3 className="font-display text-xl font-bold mb-2">{point.title}</h3>
-                <p className="text-foreground/70">{point.description}</p>
+                <p className="text-primary-foreground/80">{point.description}</p>
               </div>
             ))}
           </div>
@@ -273,7 +273,7 @@ export default function KanalizaciaContent() {
                       <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
-                  <p className="text-foreground/80 mb-4 italic">&quot;{review.text}&quot;</p>
+                  <p className="text-primary-foreground/90 mb-4 italic">&quot;{review.text}&quot;</p>
                   <div className="flex items-center gap-2">
                     <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center font-bold">
                       {review.name.charAt(0)}
