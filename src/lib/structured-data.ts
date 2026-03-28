@@ -36,7 +36,7 @@ export const localBusinessSchema = {
   priceRange: "$$",
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "4.8",
+    ratingValue: "5.0",
     reviewCount: "6",
     bestRating: "5",
     worstRating: "1",
@@ -66,7 +66,7 @@ export const localBusinessSchema = {
     {
       "@type": "Review",
       author: { "@type": "Person", name: "Yaroslava Svitlyk" },
-      reviewRating: { "@type": "Rating", ratingValue: "4", bestRating: "5" },
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
       reviewBody:
         "Som veľmi spokojná so službami. Prišiel rýchlo, všetko profesionálne vysvetlil a problém vyriešil za chvíľu. Určite odporúčam.",
     },

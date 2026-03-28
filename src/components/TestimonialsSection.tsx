@@ -50,7 +50,7 @@ const TestimonialsSection = () => {
     {
       name: t("testimonials.4.name"),
       content: t("testimonials.4.content"),
-      rating: 4,
+      rating: 5,
     },
     {
       name: t("testimonials.5.name"),
