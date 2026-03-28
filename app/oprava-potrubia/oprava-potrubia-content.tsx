@@ -273,7 +273,7 @@ export default function OpravaPotrabiaContent() {
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
               Prečo si vybrať nás?
             </h2>
-            <p className="text-foreground/70 max-w-2xl mx-auto text-lg">
+            <p className="text-primary-foreground/80 max-w-2xl mx-auto text-lg">
               Sme skúsený tím inštalatérov, ktorý sa špecializuje na opravy vodovodného potrubia v Bratislave. Kladieme dôraz na kvalitu, rýchlosť a férový prístup ku každému zákazníkovi.
             </p>
           </div>
@@ -285,7 +285,7 @@ export default function OpravaPotrabiaContent() {
                   <point.icon className="h-8 w-8" />
                 </div>
                 <h3 className="font-display text-xl font-bold mb-2">{point.title}</h3>
-                <p className="text-foreground/70">{point.description}</p>
+                <p className="text-primary-foreground/80">{point.description}</p>
               </div>
             ))}
           </div>

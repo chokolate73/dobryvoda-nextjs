@@ -451,7 +451,7 @@ export default function FiltreNaVoduContent() {
                   <point.icon className="h-8 w-8" />
                 </div>
                 <h3 className="font-display text-xl font-bold mb-2">{point.title}</h3>
-                <p className="text-foreground/70">{point.description}</p>
+                <p className="text-primary-foreground/80">{point.description}</p>
               </div>
             ))}
           </div>

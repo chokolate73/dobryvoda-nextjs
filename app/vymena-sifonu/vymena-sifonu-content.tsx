@@ -195,7 +195,7 @@ export default function VymenaSifonuContent() {
               </div>
               <div>
                 <h3 className="font-display text-2xl font-bold mb-2">Nečakajte, kým bude neskoro</h3>
-                <p className="text-foreground/80">
+                <p className="text-primary-foreground/90">
                   Pretekajúci sifón dokáže za krátky čas napáchať veľké škody. Voda poškodzuje
                   nábytok, podlahy a steny. Ak spozorujete akýkoľvek z vyššie uvedených príznakov,
                   neodkladajte opravu. Zavoláme a dohodneme sa na termíne, ktorý vám vyhovuje.
@@ -301,7 +301,7 @@ export default function VymenaSifonuContent() {
                   <point.icon className="h-8 w-8" />
                 </div>
                 <h3 className="font-display text-xl font-bold mb-2">{point.title}</h3>
-                <p className="text-foreground/70">{point.description}</p>
+                <p className="text-primary-foreground/80">{point.description}</p>
               </div>
             ))}
           </div>
