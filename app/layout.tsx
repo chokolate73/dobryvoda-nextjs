@@ -57,6 +57,19 @@ export const metadata: Metadata = {
     apple: [{ url: "/favicon.png", sizes: "192x192" }],
   },
   manifest: "/site.webmanifest",
+  other: {
+    "geo.region": "SK-BL",
+    "geo.placename": "Bratislava",
+    "geo.position": "48.1486;17.1077",
+    ICBM: "48.1486, 17.1077",
+  },
+  alternates: {
+    canonical: "https://dobryvodar.sk",
+    languages: {
+      sk: "https://dobryvodar.sk",
+      "x-default": "https://dobryvodar.sk",
+    },
+  },
 };
 
 export default function RootLayout({
