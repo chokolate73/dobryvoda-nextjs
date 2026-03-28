@@ -190,7 +190,7 @@ export default function VymenaSifonuContent() {
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="flex-shrink-0">
                 <div className="w-20 h-20 bg-accent rounded-full flex items-center justify-center">
-                  <AlertTriangle className="h-10 w-10" />
+                  <AlertTriangle className="h-10 w-10 text-primary" />
                 </div>
               </div>
               <div>
@@ -298,7 +298,7 @@ export default function VymenaSifonuContent() {
             {trustPoints.map((point, index) => (
               <div key={index} className="text-center">
                 <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                  <point.icon className="h-8 w-8" />
+                  <point.icon className="h-8 w-8 text-primary" />
                 </div>
                 <h3 className="font-display text-xl font-bold mb-2">{point.title}</h3>
                 <p className="text-primary-foreground/80">{point.description}</p>
@@ -394,7 +394,7 @@ export default function VymenaSifonuContent() {
                 href="tel:+421944562059"
                 className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground text-2xl md:text-3xl font-bold px-8 py-4 rounded-xl transition-colors mb-8"
               >
-                <Phone className="h-8 w-8" />
+                <Phone className="h-8 w-8 text-primary" />
                 0944 562 059
               </a>
 

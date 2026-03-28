@@ -39,38 +39,39 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-display font-bold text-lg mb-4">{t("footer.quickLinks")}</h3>
-            <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Quick Links & Services - side by side on mobile */}
+          <div className="grid grid-cols-2 gap-8 md:contents">
+            <div>
+              <h3 className="font-display font-bold text-lg mb-4">{t("footer.quickLinks")}</h3>
+              <ul className="space-y-3">
+                {quickLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="font-display font-bold text-lg mb-4">{t("footer.services")}</h3>
-            <ul className="space-y-3">
-              {serviceLinks.map((service) => (
-                <li key={service.href}>
-                  <Link
-                    href={service.href}
-                    className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
-                  >
-                    {service.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div>
+              <h3 className="font-display font-bold text-lg mb-4">{t("footer.services")}</h3>
+              <ul className="space-y-3">
+                {serviceLinks.map((service) => (
+                  <li key={service.href}>
+                    <Link
+                      href={service.href}
+                      className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                    >
+                      {service.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Contact */}
