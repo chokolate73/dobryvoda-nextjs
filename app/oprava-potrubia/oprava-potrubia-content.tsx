@@ -364,7 +364,7 @@ export default function OpravaPotrabiaContent() {
                 href="tel:+421944562059"
                 className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground text-2xl md:text-3xl font-bold px-8 py-4 rounded-xl transition-colors mb-8"
               >
-                <Phone className="h-8 w-8 text-primary" />
+                <Phone className="h-8 w-8" />
                 0944 562 059
               </a>
 

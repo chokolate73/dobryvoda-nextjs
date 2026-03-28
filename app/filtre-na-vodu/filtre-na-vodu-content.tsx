@@ -277,30 +277,38 @@ export default function FiltreNaVoduContent() {
       {/* Why Section */}
       <section id="preco" className="py-16 md:py-24 bg-background">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <span className="text-primary font-semibold tracking-wider uppercase text-sm mb-4 block">
-              Kvalita vody
-            </span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Prečo riešiť kvalitu vody?
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Bratislava má pomerne tvrdú vodu. Vodný kameň postupne poškodzuje spotrebiče, rozvody a znižuje komfort bývania.
-            </p>
-          </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+            <div>
+              <span className="text-primary font-semibold tracking-wider uppercase text-sm mb-4 block">
+                Kvalita vody
+              </span>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Prečo riešiť kvalitu vody?
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                Bratislava má pomerne tvrdú vodu. Vodný kameň postupne poškodzuje spotrebiče, rozvody a znižuje komfort bývania.
+              </p>
+              <Button variant="hero" size="lg" asChild>
+                <a href="tel:+421944562059">
+                  <Phone className="mr-2 h-5 w-5" />
+                  Bezplatná konzultácia
+                </a>
+              </Button>
+            </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {reasons.map((reason, index) => (
-              <Card key={index} className="border-border hover:border-primary/30 card-shadow hover:card-shadow-hover transition-all">
-                <CardContent className="p-6">
-                  <div className="w-14 h-14 bg-accent rounded-xl flex items-center justify-center mb-4">
-                    <reason.icon className="h-7 w-7 text-primary" />
+            <div className="space-y-5">
+              {reasons.map((reason, index) => (
+                <div key={index} className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center shrink-0 mt-0.5">
+                    <reason.icon className="h-5 w-5 text-primary" />
                   </div>
-                  <h3 className="font-display text-lg font-bold text-foreground mb-2">{reason.title}</h3>
-                  <p className="text-sm text-muted-foreground">{reason.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+                  <div>
+                    <h3 className="font-semibold text-foreground mb-1">{reason.title}</h3>
+                    <p className="text-sm text-muted-foreground">{reason.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -523,7 +531,7 @@ export default function FiltreNaVoduContent() {
                 href="tel:+421944562059"
                 className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground text-2xl md:text-3xl font-bold px-8 py-4 rounded-xl transition-colors mb-8"
               >
-                <Phone className="h-8 w-8 text-primary" />
+                <Phone className="h-8 w-8" />
                 0944 562 059
               </a>
 
