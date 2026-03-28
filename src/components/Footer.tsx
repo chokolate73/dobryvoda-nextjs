@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, MapPin, Clock } from "lucide-react";
+import { Phone, MapPin, Clock, Shield } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
@@ -34,9 +34,13 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Image src="/images/logo-new.png" alt="Dobrý vodár - vodoinštalatér Bratislava" width={160} height={80} className="h-20 w-auto mb-4" />
-            <p className="text-primary-foreground/70 leading-relaxed">
+            <p className="text-primary-foreground/70 leading-relaxed mb-4">
               {t("footer.description")}
             </p>
+            <div className="flex items-center gap-2 text-primary-foreground/70">
+              <Shield className="h-5 w-5 text-primary flex-shrink-0" />
+              <span className="text-sm">Poistenie zodpovednosti za škodu</span>
+            </div>
           </div>
 
           {/* Quick Links & Services - side by side on mobile */}
