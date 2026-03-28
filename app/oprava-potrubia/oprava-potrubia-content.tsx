@@ -337,9 +337,12 @@ export default function OpravaPotrabiaContent() {
           <div className="max-w-3xl mx-auto mt-12 text-center">
             <p className="text-muted-foreground text-lg">
               Potrebujete aj čistenie kanalizácie? Pozrite si naše služby{" "}
-              <Link href="/kanalizacia" className="text-primary font-semibold hover:underline">
+              <Link href="/krtkovanie" className="text-primary font-semibold hover:underline">
                 krtkovania a čistenia odpadov
-              </Link>.
+              </Link>. Zaujíma vás{" "}
+              <Link href="/filtre-na-vodu" className="text-primary font-semibold hover:underline">
+                filtrácia a zmäkčovanie vody
+              </Link>?
             </p>
           </div>
         </div>

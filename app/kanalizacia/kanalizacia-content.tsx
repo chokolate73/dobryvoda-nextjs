@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Phone, CheckCircle, MapPin, Clock, Shield, Zap, Star, Wrench, ArrowRight, Droplets, Home, Building, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -285,6 +286,26 @@ export default function KanalizaciaContent() {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Cross-links */}
+      <section className="py-12 bg-secondary/30">
+        <div className="container mx-auto">
+          <div className="max-w-3xl mx-auto text-center space-y-4">
+            <p className="text-muted-foreground text-lg">
+              Hľadáte krtkovanie upchatého odpadu? Pozrite si naše{" "}
+              <Link href="/krtkovanie" className="text-primary font-semibold hover:underline">
+                služby krtkovania
+              </Link>.
+            </p>
+            <p className="text-muted-foreground text-lg">
+              Potrebujete aj{" "}
+              <Link href="/filtre-na-vodu" className="text-primary font-semibold hover:underline">
+                filtráciu a zmäkčovanie vody
+              </Link>?
+            </p>
           </div>
         </div>
       </section>
