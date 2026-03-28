@@ -31,16 +31,16 @@ const breadcrumbs = [
 
 const pageFaqs = [
   {
-    question: "Skúsenosť zákazníka: Ján M. z Petržalka",
-    answer: "Upchatá kanalizácia v kúpeľni vyriešená za hodinu. Profesionálny prístup, čistá práca. Odporúčam!",
+    question: "Koľko stojí čistenie kanalizácie?",
+    answer: "Cena závisí od typu upchatia a prístupu k potrubiu. Orientačnú cenu vám povieme už pri telefonáte.",
   },
   {
-    question: "Skúsenosť zákazníka: Mária K. z Ružinov",
-    answer: "Výborná služba. Prišli rýchlo, vyčistili odpad v kuchyni a všetko fungovalo ako nové.",
+    question: "Ako rýchlo prídete?",
+    answer: "V Bratislave sme u vás do 60 minút od zavolania. Službu poskytujeme aj cez víkendy.",
   },
   {
-    question: "Skúsenosť zákazníka: Peter S. z Staré Mesto",
-    answer: "Profesionálne krtkovanie za rozumnú cenu. Moderne vybavení a skúsený technik.",
+    question: "Je FlexShaft bezpečný pre staršie potrubie?",
+    answer: "Áno, na rozdiel od vysokotlakového čistenia je FlexShaft šetrný aj k starším materiálom vrátane liatiny.",
   },
 ];
 

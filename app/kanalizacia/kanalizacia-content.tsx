@@ -60,11 +60,6 @@ export default function KanalizaciaContent() {
     { icon: Star, title: "Profesionálny prístup", description: "Skúsení technici" }
   ];
 
-  const reviews = [
-    { name: "Ján M.", location: "Petržalka", text: "Upchatá kanalizácia v kúpeľni vyriešená za hodinu. Profesionálny prístup, čistá práca. Odporúčam!" },
-    { name: "Mária K.", location: "Ružinov", text: "Výborná služba. Prišli rýchlo, vyčistili odpad v kuchyni a všetko fungovalo ako nové." },
-    { name: "Peter S.", location: "Staré Mesto", text: "Profesionálne krtkovanie za rozumnú cenu. Moderne vybavení a skúsený technik." }
-  ];
 
   return (
     <main className="min-h-screen">
@@ -252,7 +247,7 @@ export default function KanalizaciaContent() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {trustPoints.map((point, index) => (
               <div key={index} className="text-center">
                 <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
@@ -264,29 +259,6 @@ export default function KanalizaciaContent() {
             ))}
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {reviews.map((review, index) => (
-              <Card key={index} className="bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/20">
-                <CardContent className="p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <p className="text-primary-foreground/90 mb-4 italic">&quot;{review.text}&quot;</p>
-                  <div className="flex items-center gap-2">
-                    <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center font-bold">
-                      {review.name.charAt(0)}
-                    </div>
-                    <div>
-                      <p className="font-semibold">{review.name}</p>
-                      <p className="text-sm text-muted-foreground">{review.location}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
         </div>
       </section>
 
