@@ -101,11 +101,11 @@ const TestimonialsSection = () => {
           ref={cardsRef.ref}
           className={`scroll-animate ${cardsRef.isVisible ? "visible" : ""}`}
         >
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
             {visibleTestimonials.map((testimonial, index) => (
               <div
                 key={testimonial.name}
-                className="p-6 lg:p-8 bg-card rounded-2xl card-shadow hover:card-shadow-hover transition-all duration-300 flex flex-col"
+                className="p-6 lg:p-8 bg-card rounded-2xl card-shadow hover:card-shadow-hover transition-all duration-300 flex flex-col h-full"
                 style={{ transitionDelay: `${index * 0.15}s` }}
               >
                 {/* Rating & Google Badge */}
