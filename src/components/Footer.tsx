@@ -1,5 +1,7 @@
+"use client";
+
+import Image from "next/image";
 import { Phone, MapPin, Clock } from "lucide-react";
-import logo from "@/assets/logo-new.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
@@ -28,7 +30,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <img src={logo} alt="Dobrý vodár" className="h-20 w-auto mb-4" />
+            <Image src="/images/logo-new.png" alt="Dobrý vodár" width={160} height={80} className="h-20 w-auto mb-4" />
             <p className="text-primary-foreground/70 leading-relaxed">
               {t("footer.description")}
             </p>

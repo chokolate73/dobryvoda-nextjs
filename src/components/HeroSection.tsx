@@ -1,6 +1,8 @@
+"use client";
+
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
-import plumberHero from "@/assets/plumber-hero.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const HeroSection = () => {
@@ -60,10 +62,13 @@ const HeroSection = () => {
           <div className="relative animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <div className="relative z-10">
               <div className="bg-card rounded-3xl overflow-hidden card-shadow">
-                <img
-                  src={plumberHero}
+                <Image
+                  src="/images/plumber-hero.jpg"
                   alt={t("hero.image.alt")}
+                  width={640}
+                  height={480}
                   className="w-full h-auto object-cover"
+                  priority
                 />
               </div>
             </div>

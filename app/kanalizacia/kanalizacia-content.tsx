@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { Phone, CheckCircle, MapPin, Clock, Shield, Zap, Star, Wrench, ArrowRight, Droplets, Home, Building, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -7,9 +9,8 @@ import { Textarea } from "@/components/ui/textarea";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingPhoneButton from "@/components/FloatingPhoneButton";
-import SeoHead from "@/components/SeoHead";
 
-const Kanalizacia = () => {
+export default function KanalizaciaContent() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -40,26 +41,10 @@ const Kanalizacia = () => {
   ];
 
   const services = [
-    {
-      icon: Droplets,
-      title: "Kuchynské drezy",
-      description: "Odstránenie tukov, zvyškov jedla a usadenín"
-    },
-    {
-      icon: Home,
-      title: "Odtoky v kúpeľni",
-      description: "Čistenie umývadiel, vaní a sprchových kútov"
-    },
-    {
-      icon: Building,
-      title: "Hlavná kanalizácia",
-      description: "Profesionálne čistenie hlavných odpadových potrubí"
-    },
-    {
-      icon: Wrench,
-      title: "Odstránenie vodného kameňa",
-      description: "Efektívne odstránenie minerálnych usadenín a tukov"
-    }
+    { icon: Droplets, title: "Kuchynské drezy", description: "Odstránenie tukov, zvyškov jedla a usadenín" },
+    { icon: Home, title: "Odtoky v kúpeľni", description: "Čistenie umývadiel, vaní a sprchových kútov" },
+    { icon: Building, title: "Hlavná kanalizácia", description: "Profesionálne čistenie hlavných odpadových potrubí" },
+    { icon: Wrench, title: "Odstránenie vodného kameňa", description: "Efektívne odstránenie minerálnych usadenín a tukov" }
   ];
 
   const areas = [
@@ -75,47 +60,13 @@ const Kanalizacia = () => {
   ];
 
   const reviews = [
-    {
-      name: "Ján M.",
-      location: "Petržalka",
-      text: "Upchatá kanalizácia v kúpeľni vyriešená za hodinu. Profesionálny prístup, čistá práca. Odporúčam!"
-    },
-    {
-      name: "Mária K.",
-      location: "Ružinov",
-      text: "Výborná služba. Prišli rýchlo, vyčistili odpad v kuchyni a všetko fungovalo ako nové."
-    },
-    {
-      name: "Peter S.",
-      location: "Staré Mesto",
-      text: "Profesionálne krtkovanie za rozumnú cenu. Moderne vybavení a skúsený technik."
-    }
+    { name: "Ján M.", location: "Petržalka", text: "Upchatá kanalizácia v kúpeľni vyriešená za hodinu. Profesionálny prístup, čistá práca. Odporúčam!" },
+    { name: "Mária K.", location: "Ružinov", text: "Výborná služba. Prišli rýchlo, vyčistili odpad v kuchyni a všetko fungovalo ako nové." },
+    { name: "Peter S.", location: "Staré Mesto", text: "Profesionálne krtkovanie za rozumnú cenu. Moderne vybavení a skúsený technik." }
   ];
-
-  // Breadcrumbs for structured data
-  const breadcrumbs = [
-    { name: "Domov", url: "https://dobryvodar.sk" },
-    { name: "Krtkovanie a čistenie kanalizácie", url: "https://dobryvodar.sk/kanalizacia" }
-  ];
-
-  // FAQ data for this page
-  const pageFaqs = reviews.map(review => ({
-    question: `Skúsenosť zákazníka: ${review.name} z ${review.location}`,
-    answer: review.text
-  }));
 
   return (
     <main className="min-h-screen">
-      <SeoHead 
-        title="Krtkovanie a Čistenie Kanalizácie Bratislava | Ridgid FlexShaft"
-        description="Profesionálne krtkovanie a čistenie kanalizácie v Bratislave. Najnovšia technológia Ridgid FlexShaft K9-102. Rýchly výjazd, férové ceny. Volajte 0944 562 059."
-        keywords="krtkovanie, čistenie kanalizácie, upchatý odpad, profesionálne čistenie potrubia, krtkovanie bratislava, ridgid flexshaft"
-        breadcrumbs={breadcrumbs}
-        serviceType="Čistenie kanalizácie"
-        serviceName="Krtkovanie a čistenie kanalizácie Bratislava"
-        faqs={pageFaqs}
-      />
-      
       <Navbar />
 
       {/* Hero Section */}
@@ -126,14 +77,14 @@ const Kanalizacia = () => {
               <Wrench className="inline h-4 w-4 mr-2" />
               Profesionálne služby v Bratislave
             </span>
-            
+
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
               Efektívne <span className="text-gradient">Krtkovanie</span> a{" "}
               <span className="text-gradient">Čistenie Kanalizácie</span> v Bratislave
             </h1>
-            
+
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Najnovšia technológia <strong className="text-primary">Ridgid FlexShaft K9-102</strong>. 
+              Najnovšia technológia <strong className="text-primary">Ridgid FlexShaft K9-102</strong>.
               Čistíme potrubia od steny k stene, rýchlo a bezpečne.
             </p>
 
@@ -150,7 +101,6 @@ const Kanalizacia = () => {
               </Button>
             </div>
 
-            {/* Quick Stats */}
             <div className="flex flex-wrap justify-center gap-8 text-muted-foreground">
               <div className="flex items-center gap-2">
                 <CheckCircle className="h-5 w-5 text-primary" />
@@ -198,7 +148,6 @@ const Kanalizacia = () => {
             ))}
           </div>
 
-          {/* Technology Highlight Box */}
           <div className="mt-12 max-w-4xl mx-auto bg-primary rounded-2xl p-8 text-primary-foreground">
             <div className="flex flex-col md:flex-row items-center gap-6">
               <div className="flex-shrink-0">
@@ -209,7 +158,7 @@ const Kanalizacia = () => {
               <div>
                 <h3 className="font-display text-2xl font-bold mb-2">Ridgid FlexShaft K9-102</h3>
                 <p className="text-primary-foreground/90">
-                  Profesionálny stroj na čistenie potrubia s priemerom 32-100mm. 
+                  Profesionálny stroj na čistenie potrubia s priemerom 32-100mm.
                   Flexibilný kábel s rotujúcou reťazovou hlavicou odstraňuje aj tie najodolnejšie usadeniny.
                 </p>
               </div>
@@ -258,14 +207,14 @@ const Kanalizacia = () => {
                 Bratislava I - V a okolie
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Poskytujeme služby v celej Bratislave a blízkom okolí. 
+                Poskytujeme služby v celej Bratislave a blízkom okolí.
                 Rýchly výjazd zabezpečíme do všetkých mestských častí.
               </p>
 
               <div className="flex flex-wrap gap-2 mb-8">
                 {areas.map((area, index) => (
-                  <span 
-                    key={index} 
+                  <span
+                    key={index}
                     className="inline-flex items-center gap-1 bg-accent text-accent-foreground px-3 py-1.5 rounded-full text-sm font-medium"
                   >
                     <MapPin className="h-3 w-3" />
@@ -282,7 +231,6 @@ const Kanalizacia = () => {
               </Button>
             </div>
 
-            {/* Map Placeholder */}
             <div className="bg-secondary/50 rounded-2xl overflow-hidden h-[400px] flex items-center justify-center border border-border card-shadow">
               <div className="text-center p-8">
                 <MapPin className="h-16 w-16 text-primary mx-auto mb-4" />
@@ -315,7 +263,6 @@ const Kanalizacia = () => {
             ))}
           </div>
 
-          {/* Reviews */}
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {reviews.map((review, index) => (
               <Card key={index} className="bg-primary-foreground/10 backdrop-blur-sm border-primary-foreground/20">
@@ -325,7 +272,7 @@ const Kanalizacia = () => {
                       <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
-                  <p className="text-primary-foreground/90 mb-4 italic">"{review.text}"</p>
+                  <p className="text-primary-foreground/90 mb-4 italic">&quot;{review.text}&quot;</p>
                   <div className="flex items-center gap-2">
                     <div className="w-10 h-10 bg-primary-foreground/20 rounded-full flex items-center justify-center font-bold">
                       {review.name.charAt(0)}
@@ -346,7 +293,6 @@ const Kanalizacia = () => {
       <section id="kontakt" className="py-16 md:py-24 bg-foreground text-primary-foreground">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Info */}
             <div>
               <h2 className="font-display text-3xl md:text-4xl font-bold mb-6">
                 Potrebujete <span className="text-primary-light">krtkovanie</span>?
@@ -355,7 +301,7 @@ const Kanalizacia = () => {
                 Zavolajte nám a vyriešime váš problém s kanalizáciou rýchlo a profesionálne.
               </p>
 
-              <a 
+              <a
                 href="tel:+421944562059"
                 className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-primary-foreground text-2xl md:text-3xl font-bold px-8 py-4 rounded-xl transition-colors mb-8"
               >
@@ -379,7 +325,6 @@ const Kanalizacia = () => {
               </div>
             </div>
 
-            {/* Contact Form */}
             <div className="bg-primary-foreground/10 rounded-2xl p-6 md:p-8">
               <h3 className="font-display text-xl font-bold mb-6">Napíšte nám</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -410,9 +355,9 @@ const Kanalizacia = () => {
                     className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50"
                   />
                 </div>
-                <Button 
-                  type="submit" 
-                  size="lg" 
+                <Button
+                  type="submit"
+                  size="lg"
                   variant="hero"
                   className="w-full"
                 >
@@ -428,6 +373,4 @@ const Kanalizacia = () => {
       <FloatingPhoneButton />
     </main>
   );
-};
-
-export default Kanalizacia;
+}

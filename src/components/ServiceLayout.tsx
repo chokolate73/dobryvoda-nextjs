@@ -1,7 +1,9 @@
+"use client";
+
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingPhoneButton from "@/components/FloatingPhoneButton";
-import SeoHead from "@/components/SeoHead";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { CheckCircle2, Phone, ArrowRight } from "lucide-react";
@@ -16,13 +18,8 @@ const ServiceLayout = ({ translationKey, image }: ServiceLayoutProps) => {
 
   return (
     <main className="min-h-screen">
-      <SeoHead 
-        title={t(`${translationKey}.seo.title`)}
-        description={t(`${translationKey}.seo.description`)}
-        keywords={t(`${translationKey}.seo.keywords`)}
-      />
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-secondary/30">
         <div className="container mx-auto px-4">
@@ -54,10 +51,13 @@ const ServiceLayout = ({ translationKey, image }: ServiceLayoutProps) => {
             </div>
             <div className="relative animate-fade-in delay-100">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src={image} 
+                <Image
+                  src={image}
                   alt={t(`${translationKey}.hero.title`)}
+                  width={640}
+                  height={400}
                   className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-700"
+                  priority
                 />
               </div>
             </div>
@@ -73,7 +73,7 @@ const ServiceLayout = ({ translationKey, image }: ServiceLayoutProps) => {
               {t(`${translationKey}.problem.title`)}
             </h2>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {[1, 2, 3, 4].map((num) => (
               <div key={num} className="flex items-start gap-4 p-6 bg-card rounded-xl border border-border hover:shadow-lg transition-all">

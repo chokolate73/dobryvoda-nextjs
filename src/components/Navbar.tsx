@@ -1,7 +1,9 @@
+"use client";
+
 import { useState } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone } from "lucide-react";
-import logo from "@/assets/logo.png";
 import LanguageToggle from "@/components/LanguageToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -23,7 +25,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#domov" className="flex items-center gap-2">
-            <img src={logo} alt="Dobrý vodár" className="h-14 w-auto" />
+            <Image src="/images/logo.png" alt="Dobrý vodár" width={120} height={56} className="h-14 w-auto" priority />
           </a>
 
           {/* Desktop Navigation */}

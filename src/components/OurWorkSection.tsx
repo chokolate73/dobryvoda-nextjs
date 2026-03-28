@@ -1,15 +1,11 @@
+"use client";
+
 import { useCallback } from "react";
+import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 import { useLanguage } from "@/contexts/LanguageContext";
-
-import work1 from "@/assets/work-1.jpg";
-import work2 from "@/assets/work-2.jpg";
-import work3 from "@/assets/work-3.jpg";
-import work4 from "@/assets/work-4.jpg";
-import work5 from "@/assets/work-5.jpg";
-import work6 from "@/assets/work-6.jpg";
 
 const OurWorkSection = () => {
   const headerRef = useScrollAnimation({ threshold: 0.2 });
@@ -17,12 +13,12 @@ const OurWorkSection = () => {
   const { t } = useLanguage();
 
   const works = [
-    { id: 1, image: work1, title: t("work.1") },
-    { id: 2, image: work2, title: t("work.2") },
-    { id: 3, image: work3, title: t("work.3") },
-    { id: 4, image: work4, title: t("work.4") },
-    { id: 5, image: work5, title: t("work.5") },
-    { id: 6, image: work6, title: t("work.6") },
+    { id: 1, image: "/images/work-1.jpg", title: t("work.1") },
+    { id: 2, image: "/images/work-2.jpg", title: t("work.2") },
+    { id: 3, image: "/images/work-3.jpg", title: t("work.3") },
+    { id: 4, image: "/images/work-4.jpg", title: t("work.4") },
+    { id: 5, image: "/images/work-5.jpg", title: t("work.5") },
+    { id: 6, image: "/images/work-6.jpg", title: t("work.6") },
   ];
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -72,9 +68,11 @@ const OurWorkSection = () => {
                   className="flex-[0_0_100%] min-w-0 md:flex-[0_0_50%] lg:flex-[0_0_33.333%] pl-4"
                 >
                   <div className="relative group overflow-hidden rounded-xl shadow-lg aspect-[4/3]">
-                    <img
+                    <Image
                       src={work.image}
                       alt={work.title}
+                      width={400}
+                      height={300}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
