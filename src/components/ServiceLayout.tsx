@@ -21,7 +21,7 @@ const ServiceLayout = ({ translationKey, image }: ServiceLayoutProps) => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-secondary/30">
+      <section className="pt-8 pb-16 md:pt-32 lg:pt-40 lg:pb-24 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">

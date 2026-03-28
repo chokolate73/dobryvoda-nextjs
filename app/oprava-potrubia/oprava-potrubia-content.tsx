@@ -107,7 +107,7 @@ export default function OpravaPotrabiaContent() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 lg:pt-32 lg:pb-24 hero-gradient min-h-[90vh] flex items-center">
+      <section className="pt-8 pb-16 md:pt-24 lg:pt-32 lg:pb-24 hero-gradient min-h-[90vh] flex items-center">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <span className="inline-block px-4 py-1.5 bg-accent text-accent-foreground rounded-full text-sm font-medium mb-6">

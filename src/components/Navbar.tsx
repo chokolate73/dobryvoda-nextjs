@@ -20,7 +20,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border">
+    <nav className="relative md:fixed md:top-0 md:left-0 md:right-0 z-50 bg-card/95 md:backdrop-blur-md border-b border-border">
       <div className="container mx-auto">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}

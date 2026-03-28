@@ -15,7 +15,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section id="domov" className="pt-24 pb-16 lg:pt-32 lg:pb-24 hero-gradient min-h-screen flex items-center">
+    <section id="domov" className="pt-8 pb-16 md:pt-24 lg:pt-32 lg:pb-24 hero-gradient min-h-screen flex items-center">
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
