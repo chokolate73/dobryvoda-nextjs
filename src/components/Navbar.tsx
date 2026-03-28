@@ -12,11 +12,11 @@ const Navbar = () => {
   const { t } = useLanguage();
 
   const navLinks = [
-    { name: t("nav.home"), href: "#domov" },
-    { name: t("nav.services"), href: "#sluzby" },
-    { name: t("nav.work"), href: "#prace" },
-    { name: t("nav.references"), href: "#referencie" },
-    { name: t("nav.contact"), href: "#kontakt" },
+    { name: t("nav.home"), href: "/#domov" },
+    { name: t("nav.services"), href: "/#sluzby" },
+    { name: t("nav.work"), href: "/#prace" },
+    { name: t("nav.references"), href: "/#referencie" },
+    { name: t("nav.contact"), href: "/#kontakt" },
   ];
 
   return (
@@ -49,7 +49,7 @@ const Navbar = () => {
               0944 562 059
             </a>
             <Button variant="hero" size="default" asChild>
-              <a href="#kontakt">{t("nav.book")}</a>
+              <a href="/#kontakt">{t("nav.book")}</a>
             </Button>
           </div>
 
@@ -85,7 +85,7 @@ const Navbar = () => {
                 0944 562 059
               </a>
               <Button variant="hero" className="mt-2" asChild>
-                <a href="#kontakt">{t("nav.book")}</a>
+                <a href="/#kontakt">{t("nav.book")}</a>
               </Button>
             </div>
           </div>
