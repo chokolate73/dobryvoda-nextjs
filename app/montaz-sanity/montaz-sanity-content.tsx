@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Phone, CheckCircle, MapPin, Clock, Shield, Zap, Star, Wrench, ArrowRight, Droplets, Home, Building, Bath, ChevronDown } from "lucide-react";
+import { Phone, CheckCircle, MapPin, Clock, Shield, Zap, Star, Wrench, ArrowRight, Droplets, Home, Building, Bath, ChevronDown, Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { toast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingPhoneButton from "@/components/FloatingPhoneButton";
@@ -14,15 +15,43 @@ import FloatingPhoneButton from "@/components/FloatingPhoneButton";
 export default function MontazSanityContent() {
   const [formData, setFormData] = useState({
     name: "",
+    email: "",
     phone: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://formspree.io/f/xgvgzqlb", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Správa odoslaná!",
+          description: "Ďakujeme za vašu správu. Čoskoro vás budeme kontaktovať.",
+        });
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        throw new Error("Failed to send");
+      }
+    } catch (error) {
+      toast({
+        title: "Chyba",
+        description: "Nepodarilo sa odoslať správu. Skúste to znova.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const services = [
@@ -399,40 +428,48 @@ export default function MontazSanityContent() {
             <div className="bg-secondary/50 rounded-2xl p-6 md:p-8 border border-border">
               <h3 className="font-display text-xl font-bold mb-6">Napíšte nám</h3>
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
+                <Input
+                  type="text"
+                  placeholder="Vaše meno"
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  required
+                  className="bg-background border-border text-foreground placeholder:text-muted-foreground h-12"
+                />
+                <div className="grid md:grid-cols-2 gap-4">
                   <Input
-                    type="text"
-                    placeholder="Vaše meno"
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    className="bg-background border-border text-foreground placeholder:text-muted-foreground"
+                    type="email"
+                    placeholder="Váš email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    required
+                    className="bg-background border-border text-foreground placeholder:text-muted-foreground h-12"
                   />
-                </div>
-                <div>
                   <Input
                     type="tel"
                     placeholder="Telefónne číslo"
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    className="bg-background border-border text-foreground placeholder:text-muted-foreground"
+                    className="bg-background border-border text-foreground placeholder:text-muted-foreground h-12"
                   />
                 </div>
-                <div>
-                  <Textarea
-                    placeholder="Opíšte čo potrebujete namontovať..."
-                    rows={4}
-                    value={formData.message}
-                    onChange={(e) => setFormData({...formData, message: e.target.value})}
-                    className="bg-background border-border text-foreground placeholder:text-muted-foreground"
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  size="lg"
-                  variant="hero"
-                  className="w-full"
-                >
-                  Odoslať správu
+                <Textarea
+                  placeholder="Opíšte váš problém alebo požiadavku..."
+                  rows={4}
+                  value={formData.message}
+                  onChange={(e) => setFormData({...formData, message: e.target.value})}
+                  required
+                  className="bg-background border-border text-foreground placeholder:text-muted-foreground resize-none min-h-[100px]"
+                />
+                <Button type="submit" size="lg" variant="hero" className="w-full group" disabled={isSubmitting}>
+                  {isSubmitting ? (
+                    <Loader2 className="h-5 w-5 animate-spin" />
+                  ) : (
+                    <>
+                      Odoslať správu
+                      <Send className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    </>
+                  )}
                 </Button>
               </form>
             </div>
